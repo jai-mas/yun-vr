@@ -24,7 +24,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;
 var FloatBall = function FloatBall() {
   Promise.all(/*! require.ensure | compents/FloatBall */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/FloatBall")]).then((function () {
-    return resolve(__webpack_require__(/*! ./compents/FloatBall.vue */ 315));
+    return resolve(__webpack_require__(/*! ./compents/FloatBall.vue */ 321));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 _vue.default.config.productionTip = false;

@@ -165,7 +165,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var TabBar = function TabBar() {
   Promise.all(/*! require.ensure | compents/TabBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/TabBar")]).then((function () {
-    return resolve(__webpack_require__(/*! @/compents/TabBar.vue */ 322));
+    return resolve(__webpack_require__(/*! @/compents/TabBar.vue */ 328));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

@@ -101,7 +101,7 @@ var components
 try {
   components = {
     uIcon: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 329))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 335))
     },
   }
 } catch (e) {
@@ -175,12 +175,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var TabBar = function TabBar() {
   Promise.all(/*! require.ensure | compents/TabBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/TabBar")]).then((function () {
-    return resolve(__webpack_require__(/*! @/compents/TabBar.vue */ 322));
+    return resolve(__webpack_require__(/*! @/compents/TabBar.vue */ 328));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var FloatBall = function FloatBall() {
   Promise.all(/*! require.ensure | compents/FloatBall */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/FloatBall")]).then((function () {
-    return resolve(__webpack_require__(/*! @/compents/FloatBall.vue */ 315));
+    return resolve(__webpack_require__(/*! @/compents/FloatBall.vue */ 321));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

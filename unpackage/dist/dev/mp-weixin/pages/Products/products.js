@@ -143,7 +143,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var TabBar = function TabBar() {
   Promise.all(/*! require.ensure | compents/TabBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/TabBar")]).then((function () {
-    return resolve(__webpack_require__(/*! ../../compents/TabBar.vue */ 322));
+    return resolve(__webpack_require__(/*! ../../compents/TabBar.vue */ 328));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -161,25 +161,30 @@ var _default = {
         desc: '土家族秘传宝物|让健康与美味同行',
         tags: ['营养价值高', '降"三高"', '民族特色', '品饮体验佳', '"红军茶"', '滋味醇厚回甘']
       }, {
-        name: '蜂蜜',
+        name: '黑山羊',
         image: '/static/product/p2.png',
-        desc: '深山野生蜜源|自然醇甜滋养',
-        tags: ['野生采集', '纯天然', '润肺养颜', '百花蜜源', '无加工', '营养丰富']
-      }, {
-        name: '竹笋干',
-        image: '/static/product/p3.png',
-        desc: '高山鲜笋晾制|保留自然本味',
-        tags: ['新鲜竹笋', '传统晾晒', '脆嫩可口', '烹饪佳品', '无硫熏制', '健康食材']
+        desc: '浏阳优质黑山羊|肉质鲜嫩，口感丰富',
+        tags: ['肉质鲜嫩', '低脂肪', '浏阳特产', '湖南名品', '滋补佳品', '散养山羊']
       }, {
         name: '腊肉',
-        image: '/static/product/p4.png',
+        image: '/static/product/p3.png',
         desc: '农家古法腌制|烟熏风味独特',
         tags: ['农家自制', '传统腌制', '松木烟熏', '肉质紧实', '风味独特', '下饭佳品']
       }, {
-        name: '香菇',
+        name: '花瑶瑶柱',
+        image: '/static/product/p4.png',
+        desc: '瑶族山村手工干制|海味浓郁，原汁原味',
+        tags: ['天然无添加', '海味干货', '瑶族非遗', '手工制品', '高蛋白', '口感丰富', '煲汤圣品']
+      }, {
+        name: '毛尖',
         image: '/static/product/p5.png',
-        desc: '高山椴木香菇|肉质厚实鲜美',
-        tags: ['椴木栽培', '肉质厚实', '香味浓郁', '煲汤佳品', '富含氨基酸', '自然生长']
+        desc: '湖南名茶|回甘滋味，清香四溢',
+        tags: ['明前嫩芽', '高山云雾', '抗氧化', '滋养身心', '传统炒青', '中国地理标志']
+      }, {
+        name: '洞庭银鱼',
+        image: '/static/product/p6.png',
+        desc: '洞庭湖水域特产|鲜美肉质，口感独特',
+        tags: ['淡水珍品', '无骨银鱼', '岳阳特产', '高钙食品', '传统捕捞', '湖鲜之王']
       }]
     };
   },

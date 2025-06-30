@@ -143,7 +143,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var TabBar = function TabBar() {
   Promise.all(/*! require.ensure | compents/TabBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/TabBar")]).then((function () {
-    return resolve(__webpack_require__(/*! ../../compents/TabBar.vue */ 322));
+    return resolve(__webpack_require__(/*! ../../compents/TabBar.vue */ 328));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -154,24 +154,41 @@ var _default = {
   data: function data() {
     return {
       checkedList: [{
-        img: '/static/home/home-windows-image-1.png'
+        id: 1,
+        name: '长沙市博物馆',
+        img: '/static/checkin/m1.png',
+        url: 'https://www.720yun.com/t/3evkuerh5f7?scene_id=38521806'
       }, {
-        img: '/static/home/home-windows-image-2.png'
-      }, {
-        img: '/static/home/home-windows-image-1.png'
-      }, {
-        img: '/static/home/home-windows-image-2.png'
+        id: 2,
+        name: '韶山毛泽东同志纪念馆',
+        img: '/static/checkin/m2.png',
+        url: 'https://www.720yun.com/t/8bf2baf5jln?scene_id=706908'
       }],
       uncheckedList: [{
-        img: '/static/product/p2.png'
+        id: 3,
+        name: '湖南省地质博物馆',
+        img: '/static/checkin/m3.png',
+        url: 'https://www.720yun.com/t/aa3jtdwfOk2?scene_id=13097270'
       }, {
-        img: '/static/home/home-windows-image-4.png'
+        id: 4,
+        name: '隆平水稻博物馆',
+        img: '/static/checkin/m4.png',
+        url: 'https://www.720yun.com/t/94vkiyiy087?scene_id=34409322'
       }, {
-        img: '/static/home/home-windows-image-5.png'
+        id: 5,
+        name: '雷锋纪念馆',
+        img: '/static/checkin/m5.png',
+        url: 'https://www.720yun.com/t/daakibqyp8q?scene_id=124562138'
       }, {
-        img: '/static/home/home-windows-image-1.png'
+        id: 6,
+        name: '湘绣博物馆',
+        img: '/static/checkin/m6.png',
+        url: 'https://www.kuleiman.com/161810/879473/'
       }, {
-        img: '/static/home/home-windows-image-3.png'
+        id: 7,
+        name: '谢子龙影像艺术馆',
+        img: '/static/checkin/m7.png',
+        url: 'https://www.720yun.com/t/e2vkz7f7s89?scene_id=81587874'
       }]
     };
   },
@@ -179,13 +196,15 @@ var _default = {
     goBack: function goBack() {
       uni.navigateBack();
     },
-    handleItemClick: function handleItemClick(item) {
-      console.log('点击已打卡项', item);
-    },
-    toCloudMuseum: function toCloudMuseum() {
-      uni.navigateTo({
-        url: '/pages/cloudMuseum/cloudMuseum'
-      });
+    goToMuseum: function goToMuseum(item) {
+      // 直接跳转到静态URL（H5适用）
+      if (false) {}
+      // 小程序使用web-view跳转
+      else {
+        uni.navigateTo({
+          url: "/pages/webview/webview?url=".concat(encodeURIComponent(item.url))
+        });
+      }
     }
   }
 };

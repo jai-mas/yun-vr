@@ -256,12 +256,12 @@ var _creation = __webpack_require__(/*! ../../api/creation.js */ 174);
 //
 var FloatBall = function FloatBall() {
   Promise.all(/*! require.ensure | compents/FloatBall */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/FloatBall")]).then((function () {
-    return resolve(__webpack_require__(/*! @/compents/FloatBall.vue */ 315));
+    return resolve(__webpack_require__(/*! @/compents/FloatBall.vue */ 321));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var TabBar = function TabBar() {
   Promise.all(/*! require.ensure | compents/TabBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/TabBar")]).then((function () {
-    return resolve(__webpack_require__(/*! @/compents/TabBar.vue */ 322));
+    return resolve(__webpack_require__(/*! @/compents/TabBar.vue */ 328));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 // import uni from 'uni-app' // Declare the uni variable
