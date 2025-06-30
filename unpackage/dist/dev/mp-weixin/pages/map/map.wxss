@@ -1,0 +1,297 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* uni.scss */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.map-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  /* 热门景点列表样式 */
+  /* 景点详情底部面板 */
+}
+.map-container .custom-navbar {
+  position: absolute;
+  top: 20px;
+  left: 20rpx;
+  right: 20rpx;
+  width: calc(100% - 40rpx);
+  height: 88rpx;
+  z-index: 100;
+}
+.map-container .custom-navbar .navbar-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 44rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.map-container .custom-navbar .back-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+.map-container .custom-navbar .search-container {
+  flex: 1;
+  height: 60rpx;
+  background: #f5f5f5;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+.map-container .custom-navbar .search-container .search-input {
+  flex: 1;
+  height: 100%;
+  font-size: 28rpx;
+  color: #333;
+  background: transparent;
+}
+.map-container .custom-navbar .search-container .search-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+}
+.map-container .hot-spot-list {
+  position: absolute;
+  top: 120rpx;
+  left: 40rpx;
+  right: 40rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+  z-index: 101;
+  overflow: hidden;
+}
+.map-container .hot-spot-list .hot-spot-title {
+  padding: 24rpx 30rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.map-container .hot-spot-list .hot-spot-scroll {
+  max-height: 500rpx;
+}
+.map-container .hot-spot-list .hot-spot-scroll .hot-spot-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.map-container .hot-spot-list .hot-spot-scroll .hot-spot-item .spot-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+.map-container .hot-spot-list .hot-spot-scroll .hot-spot-item .spot-name {
+  font-size: 28rpx;
+  color: #333;
+}
+.map-container .hot-spot-list .hot-spot-scroll .hot-spot-item:active {
+  background-color: #f9f9f9;
+}
+.map-container .hot-spot-list .hot-spot-scroll .hot-spot-item:last-child {
+  border-bottom: none;
+}
+.map-container .scenic-detail-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80vh;
+  /* 增加高度，因为去掉了底部导航栏 */
+  background: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  z-index: 200;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+.map-container .scenic-detail-panel.show {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.map-container .scenic-detail-panel .drag-indicator {
+  width: 60rpx;
+  height: 8rpx;
+  background: #e0e0e0;
+  border-radius: 4rpx;
+  margin: 16rpx auto;
+}
+.map-container .scenic-detail-panel .panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx 20rpx;
+}
+.map-container .scenic-detail-panel .panel-header .scenic-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+.map-container .scenic-detail-panel .panel-header .close-btn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-container .scenic-detail-panel .panel-header .close-btn .close-text {
+  font-size: 40rpx;
+  color: #999;
+}
+.map-container .scenic-detail-panel .media-section {
+  padding: 0 30rpx 20rpx;
+}
+.map-container .scenic-detail-panel .media-section .media-container {
+  position: relative;
+  height: 400rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.map-container .scenic-detail-panel .media-section .media-container .scenic-image {
+  width: 100%;
+  height: 100%;
+}
+.map-container .scenic-detail-panel .media-section .media-container .play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-container .scenic-detail-panel .media-section .media-container .play-overlay .play-button {
+  width: 100rpx;
+  height: 100rpx;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-container .scenic-detail-panel .media-section .media-container .play-overlay .play-button .play-icon {
+  color: #fff;
+  font-size: 40rpx;
+  margin-left: 8rpx;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .control-left {
+  display: flex;
+  align-items: center;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .control-left .play-pause-btn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .control-left .play-pause-btn .control-icon {
+  color: #fff;
+  font-size: 24rpx;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .control-left .time-text {
+  color: #fff;
+  font-size: 22rpx;
+  margin-right: 16rpx;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .progress-bar {
+  flex: 1;
+  margin: 0 16rpx;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .progress-bar .progress-bg {
+  height: 6rpx;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3rpx;
+  overflow: hidden;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .progress-bar .progress-bg .progress-fill {
+  height: 100%;
+  background: #fff;
+  border-radius: 3rpx;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .time-text {
+  color: #fff;
+  font-size: 22rpx;
+  margin-right: 16rpx;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .fullscreen-btn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-container .scenic-detail-panel .media-section .media-container .video-controls .fullscreen-btn .control-icon {
+  color: #fff;
+  font-size: 24rpx;
+}
+.map-container .scenic-detail-panel .description-section {
+  flex: 1;
+  padding: 0 30rpx 30rpx;
+  /* 增加底部内边距 */
+}
+.map-container .scenic-detail-panel .description-section .description-text {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #666;
+}
+.map-container .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 199;
+}
+.map-container .map-content {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,132 @@
+
+.home-container.data-v-92bb8f34 {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+.start-page.data-v-92bb8f34 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	cursor: pointer;
+}
+.second-page.data-v-92bb8f34 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	padding-bottom: 50px; /* 为底部导航栏预留空间 */
+}
+.bg-image.data-v-92bb8f34 {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* 轮播图包裹框 */
+.carousel-wrapper.data-v-92bb8f34 {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	width: 560rpx;
+	height: 560rpx;
+	background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+	border-radius: 50%;
+	border: 4rpx solid rgba(255, 255, 255, 0.4);
+	box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.15);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	/* 禁用点击时的默认效果 */
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.carousel-wrapper.data-v-92bb8f34:hover {
+	-webkit-transform: translateX(-50%) scale(1.05);
+	        transform: translateX(-50%) scale(1.05);
+	box-shadow: 0 12rpx 48rpx rgba(0, 0, 0, 0.2);
+}
+.carousel-wrapper.data-v-92bb8f34:active {
+	-webkit-transform: translateX(-50%) scale(0.98);
+	        transform: translateX(-50%) scale(0.98);
+}
+
+/* 轮播图容器样式 */
+.carousel-container.data-v-92bb8f34 {
+	width: 500rpx;
+	height: 500rpx;
+	position: relative;
+}
+
+/* 轮播内容区 */
+.carousel-content.data-v-92bb8f34 {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+/* 轮播图图片样式 */
+.carousel-image.data-v-92bb8f34 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	transition: opacity 1.5s ease;
+}
+
+/* 过渡遮罩样式 */
+.carousel-mask.data-v-92bb8f34 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	border-radius: 50%;
+	opacity: 0;
+}
+
+/* 留言图标样式 */
+.message-icon.data-v-92bb8f34 {
+	position: absolute;
+	bottom: 370rpx; /* 调整位置，为底部导航栏留出空间 */
+	right: 10rpx;
+	width: 100rpx;
+	height: 100rpx;
+	z-index: 20;
+	cursor: pointer;
+	transition: -webkit-transform 0.3s ease;
+	transition: transform 0.3s ease;
+	transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+	/* 禁用点击时的默认效果 */
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+	outline: none;
+}
+.message-icon.data-v-92bb8f34:hover {
+	-webkit-transform: scale(1.1);
+	        transform: scale(1.1);
+}
+.message-icon.data-v-92bb8f34:focus {
+	outline: none;
+}
+.message-icon.data-v-92bb8f34:active {
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.message-image.data-v-92bb8f34 {
+	width: 100%;
+	height: 100%;
+}
+

@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/map/map",
+    "pages/exhibition/exhibition",
+    "pages/leavemessage/message",
+    "pages/MyCreation/MyCreation",
+    "pages/Navigation/Navigation",
+    "pages/welfare/welfare-main",
+    "pages/welfare/welfare-item01",
+    "pages/welfare/welfare-item02",
+    "pages/welfare/welfare-item03",
+    "pages/welfare/baoming",
+    "pages/welfare/xiangqing",
+    "pages/collection/collection",
+    "pages/Products/products",
+    "pages/tansuo/faxian",
+    "pages/tansuo/detail01",
+    "pages/CheckIn/CheckIn",
+    "pages/mine/mine",
+    "pages/mine/publish/publish"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于获取当前位置信息匹配景点信息"
+    }
+  },
+  "usingComponents": {
+    "float-ball": "/compents/FloatBall"
+  }
+}

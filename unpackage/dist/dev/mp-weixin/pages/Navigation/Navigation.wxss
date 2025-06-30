@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* uni.scss */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.navigation-container.data-v-7dc906c6 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.bg-image.data-v-7dc906c6 {
+  position: absolute;
+  width: 390px;
+  height: 801px;
+  z-index: -2;
+}
+.depth-bg-image.data-v-7dc906c6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 95%;
+  height: 90%;
+  z-index: -1;
+  opacity: 0.95;
+  border-radius: 20rpx;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+/* 导航项基本样式 */
+.nav-item.data-v-7dc906c6 {
+  position: absolute;
+  z-index: 1;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+.nav-item.data-v-7dc906c6:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+.nav-bg.data-v-7dc906c6 {
+  position: absolute;
+  border-radius: 8px;
+  z-index: 1;
+}
+.map-bg.data-v-7dc906c6 {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+.nav-icon.data-v-7dc906c6 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  z-index: 10;
+}
+.nav-text.data-v-7dc906c6 {
+  position: absolute;
+  z-index: 3;
+  color: #140b0b;
+  font-size: 14px;
+}
+.horizontal-text.data-v-7dc906c6 {
+  -webkit-writing-mode: horizontal-tb !important;
+          writing-mode: horizontal-tb !important;
+  /* 水平方向，从左到右 */
+  white-space: nowrap;
+}
+.vertical-text-container.data-v-7dc906c6 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+.vertical-text-container text.data-v-7dc906c6 {
+  color: #140b0b;
+  font-size: 14px;
+  line-height: 1.2;
+}

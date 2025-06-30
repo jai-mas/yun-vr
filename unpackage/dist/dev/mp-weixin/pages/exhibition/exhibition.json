@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "float-ball": "/compents/FloatBall",
+    "tab-bar": "/compents/TabBar"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "用户发布",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "float-ball": "/compents/FloatBall",
+    "tab-bar": "/compents/TabBar"
+  }
+}
