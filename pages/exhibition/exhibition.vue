@@ -81,7 +81,7 @@ export default {
           id: 2,
           name: '中国国家博物馆',
           desc: '展示中华五千年文明的重要窗口',
-          image: '/static/map/test.jpeg',
+          image: '/static/map/test3.jpeg',
           offsetX: 0
         },
         {
@@ -97,7 +97,7 @@ export default {
           id: 4,
           name: '湖南省博物馆',
           desc: '展示湖南历史文化的重要窗口',
-          image: '/static/map/test.jpeg',
+          image: '/static/map/test4.jpg',
           offsetX: 0
         },
         {

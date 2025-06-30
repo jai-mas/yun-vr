@@ -72,36 +72,19 @@
           <text class="close-text">×</text>
         </view>
       </view>
-
-      <!-- 视频/图片区域 -->
+      
+      <!-- 图片区域 - 移除了视频相关元素 -->
       <view class="media-section">
         <view class="media-container">
           <image 
             class="scenic-image" 
-            :src="currentSpot.image" 
+            src="/static/map/test.jpeg" 
             mode="aspectFill"
           ></image>
-          <view class="play-overlay" v-if="currentSpot.hasVideo">
-            <view class="play-button">
-              <text class="play-icon">▶</text>
-            </view>
-          </view>
-          <!-- 视频控制条 -->
-          <view class="video-controls" v-if="currentSpot.hasVideo">
-            <view class="control-left">
-              <view class="play-pause-btn">
-                <text class="control-icon">▶</text>
-              </view>
-              <text class="time-text">{{ currentSpot.currentTime }}</text>
-            </view>
-            <view class="progress-bar">
-              <view class="progress-bg">
-                <view class="progress-fill" :style="{ width: currentSpot.progress + '%' }"></view>
-              </view>
-            </view>
-            <text class="time-text">{{ currentSpot.totalTime }}</text>
-            <view class="fullscreen-btn">
-              <text class="control-icon">⛶</text>
+          <!-- 可选：添加图片标识 -->
+          <view class="image-overlay">
+            <view class="image-indicator">
+              <text class="indicator-text">📷</text>
             </view>
           </view>
         </view>
@@ -115,7 +98,7 @@
 
     <!-- 遮罩层 -->
     <view class="overlay" v-if="showDetailPanel" @click="closeDetailPanel"></view>
-	<TabBar current="" />
+    <TabBar current="" />
   </view>
 </template>
 
@@ -123,14 +106,15 @@
 import { getCreationList, deleteCreation } from '../../api/creation.js'
 import FloatBall from '@/compents/FloatBall.vue'
 import TabBar from '@/compents/TabBar.vue'
+// import uni from 'uni-app' // Declare the uni variable
+
 export default {
-	components: {
-			FloatBall,
-			TabBar
-		},
+  components: {
+    FloatBall,
+    TabBar
+  },
   data() {
     return {
-		
       center: {
         latitude: 28.1825, // 修改为岳麓书院的坐标
         longitude: 112.9344
@@ -147,25 +131,25 @@ export default {
           latitude: 28.1825,
           longitude: 112.9344,
           image: '/static/images/yuelu-academy.jpg',
-          hasVideo: true,
-          currentTime: '00:22',
-          totalTime: '03:38',
-          progress: 10,
+          localImage: '/static/images/yuelu-academy-local.jpg', // 新增本地图片路径
+          hasVideo: false, // 改为false，不再显示视频相关元素
           description: '岳麓书院是中国历史上赫赫闻名的四大书院之一，坐落于中国历史文化名城湖南长沙湘江西岸的岳麓山下。北宋开宝九年（公元976年），潭州太守朱洞在僧人办学的基础上由官府捐资兴建，正式创立岳麓书院。作为世界上最古老的学府之一，历经千年而弦歌不绝，学脉延绵。其代表传统的书院建筑至今被完整保存，每一组院落、每一块石碑、每一枚砖瓦、每一支风荷，都闪烁着时光淬炼的人文精神，向世人诉说着千年学府的沧桑与辉煌。'
         },
         {
-          name: '橘子洲头',
+          name: '中田村',
           latitude: 28.1865,
           longitude: 112.9624,
           image: '/static/images/juzizhou.jpg',
+          localImage: '/static/images/juzizhou-local.jpg',
           hasVideo: false,
           description: '橘子洲头是湘江中的一个冲击沙洲，四面环水，绵延数十里，是国家重点风景名胜区。橘子洲头景区内有毛泽东青年艺术雕塑、问天台等景点。这里是毛泽东青年时代经常游览的地方，也是他写下《沁园春·长沙》的地方。'
         },
         {
-          name: '长沙世界之窗',
+          name: '书堂山',
           latitude: 28.2386,
           longitude: 113.0557,
           image: '/static/images/world-window.jpg',
+          localImage: '/static/images/world-window-local.jpg',
           hasVideo: false,
           description: '长沙世界之窗是一个融世界各国建筑奇观、五洲风情歌舞表演、大型器械游乐、先锋时尚活动、影视拍摄基地于一体的综合性大型主题公园。园内汇集了世界各地的著名建筑和景观的微缩版本。'
         }
@@ -187,16 +171,13 @@ export default {
       }
     }
   },
-
   onLoad() {
     this.loadScenicSpots();
   },
-
   methods: {
     goBack() {
       uni.navigateBack();
     },
-
     async loadScenicSpots() {
       uni.showLoading({ title: '加载中...' });
       
@@ -247,7 +228,6 @@ export default {
         this.addTestMarkers();
       }
     },
-
     onSearch() {
       if (!this.searchKeyword.trim()) return;
       
@@ -265,29 +245,27 @@ export default {
         uni.showToast({ title: '未找到相关景点', icon: 'none' });
       }
     },
-
     onMarkerTap(e) {
-      console.log('点击了标记点:', e); // 添加调试日志
+      console.log('点击了标记点:', e);
       
       const marker = this.markers.find(item => item.id === e.markerId || item.id === e.detail.markerId);
-      console.log('找到的标记点:', marker); // 添加调试日志
+      console.log('找到的标记点:', marker);
       
       if (marker) {
-        // 查找对应的热门景点数据
         const hotSpot = this.hotSpots.find(spot => 
           spot.name === marker.customData.scenicName || 
           marker.customData.scenicName.includes(spot.name)
         );
         
-        console.log('找到的热门景点:', hotSpot); // 添加调试日志
+        console.log('找到的热门景点:', hotSpot);
         
         if (hotSpot) {
           this.currentSpot = hotSpot;
         } else {
-          // 如果没有找到对应的热门景点，使用默认数据
           this.currentSpot = {
             name: marker.customData.scenicName,
             image: '/static/images/default-scenic.jpg',
+            localImage: '/static/images/default-scenic-local.jpg',
             hasVideo: false,
             description: marker.customData.description || '暂无景点描述信息'
           };
@@ -296,11 +274,10 @@ export default {
         this.showDetailPanel = true;
         this.showHotSpotList = false;
         
-        console.log('当前景点:', this.currentSpot); // 添加调试日志
-        console.log('显示详情面板:', this.showDetailPanel); // 添加调试日志
+        console.log('当前景点:', this.currentSpot);
+        console.log('显示详情面板:', this.showDetailPanel);
       }
     },
-
     selectHotSpot(spot) {
       this.searchKeyword = spot.name;
       this.center = {
@@ -309,21 +286,17 @@ export default {
       };
       this.currentSpot = spot;
       this.showHotSpotList = false;
-      // this.showDetailPanel = true;
     },
-
     closeDetailPanel() {
       this.showDetailPanel = false;
     },
-
     addTestMarkers() {
-      // 添加多个测试标记点，包括岳麓书院
       this.markers = [
         {
           id: 1,
           latitude: 28.1825,
           longitude: 112.9344,
-          iconPath: '/static/common/location.png',
+          iconPath: '/static/map/test.jpeg',
           width: 45,
           height: 45,
           callout: {
@@ -390,7 +363,6 @@ export default {
         }
       ];
       
-      // 设置地图中心为岳麓书院
       this.center = {
         latitude: this.markers[0].latitude,
         longitude: this.markers[0].longitude
@@ -515,7 +487,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 80vh; /* 增加高度，因为去掉了底部导航栏 */
+    height: 80vh;
     background: #fff;
     border-radius: 20rpx 20rpx 0 0;
     z-index: 200;
@@ -567,7 +539,7 @@ export default {
       
       .media-container {
         position: relative;
-        height: 400rpx;
+        height: 400rpx; // 保持原有高度
         border-radius: 16rpx;
         overflow: hidden;
         
@@ -576,102 +548,22 @@ export default {
           height: 100%;
         }
         
-        .play-overlay {
+        // 新增：图片标识覆盖层（可选）
+        .image-overlay {
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.3);
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          top: 16rpx;
+          right: 16rpx;
           
-          .play-button {
-            width: 100rpx;
-            height: 100rpx;
-            background: rgba(0, 0, 0, 0.6);
+          .image-indicator {
+            width: 60rpx;
+            height: 60rpx;
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             
-            .play-icon {
-              color: #fff;
-              font-size: 40rpx;
-              margin-left: 8rpx;
-            }
-          }
-        }
-        
-        .video-controls {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 80rpx;
-          background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-          display: flex;
-          align-items: center;
-          padding: 0 20rpx;
-          
-          .control-left {
-            display: flex;
-            align-items: center;
-            
-            .play-pause-btn {
-              width: 60rpx;
-              height: 60rpx;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-right: 16rpx;
-              
-              .control-icon {
-                color: #fff;
-                font-size: 24rpx;
-              }
-            }
-            
-            .time-text {
-              color: #fff;
-              font-size: 22rpx;
-              margin-right: 16rpx;
-            }
-          }
-          
-          .progress-bar {
-            flex: 1;
-            margin: 0 16rpx;
-            
-            .progress-bg {
-              height: 6rpx;
-              background: rgba(255, 255, 255, 0.3);
-              border-radius: 3rpx;
-              overflow: hidden;
-              
-              .progress-fill {
-                height: 100%;
-                background: #fff;
-                border-radius: 3rpx;
-              }
-            }
-          }
-          
-          .time-text {
-            color: #fff;
-            font-size: 22rpx;
-            margin-right: 16rpx;
-          }
-          
-          .fullscreen-btn {
-            width: 60rpx;
-            height: 60rpx;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-            .control-icon {
+            .indicator-text {
               color: #fff;
               font-size: 24rpx;
             }
@@ -682,7 +574,7 @@ export default {
     
     .description-section {
       flex: 1;
-      padding: 0 30rpx 30rpx; /* 增加底部内边距 */
+      padding: 0 30rpx 30rpx;
       
       .description-text {
         font-size: 28rpx;
