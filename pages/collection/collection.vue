@@ -15,7 +15,7 @@
 					探索发现
 				</view>
 				<view class="tab-item" :class="{ active: activeTab === 'craft' }" @click="switchTab('craft')">
-					工艺教育
+					公益教育
 				</view>
 				<view class="tab-item" :class="{ active: activeTab === 'culture' }" @click="switchTab('culture')">
 					文创艺术
@@ -102,19 +102,29 @@
 					case 'explore':
 						// 加载探索发现数据
 						this.scenicList = [
-							{
-								id: 1,
-								title: '永恒奇茶',
-								image: '/static/product/1.png'
-							},
-							
 						];
 						break;
 					case 'craft':
-						// 加载工艺教育数据
+						// 加载公益教育数据
+						this.scenicList = [
+							{
+								id: 101,
+								title: '长沙学院三下乡——乡村振兴志愿服务活动',
+						        image: '/static/welfare/hd101.jpg',
+							},
+							{
+								id: 102,
+								title: '长沙学院三下乡——"童心圆梦"支教活动',
+								image: '/static/welfare/hd102.jpg',
+							},
+							
+							
+						];
 						break;
 					case 'culture':
 						// 加载文创艺术数据
+						this.scenicList = [
+						];
 						break;
 					case 'property':
 						// 加载物产数据
@@ -134,9 +144,8 @@
 				}
 			},
 			goToDetail(id) {
-				// 跳转到详情页
 				uni.navigateTo({
-					url: `/pages/collection/detail?id=${id}`
+					url: `/pages/welfare/xiangqing?id=${id}`
 				});
 			}
 		},

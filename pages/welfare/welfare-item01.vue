@@ -18,16 +18,17 @@
 		
 		<!-- 内容模块区域 -->
 		<view class="content-wrapper">
-			<view class="content-area" @click="navigateTo('/pages/welfare/xiangqing?id=1')">
-				<view class="content-card" >
+			<view class="content-area">
+				<!-- 资讯卡片列表 -->
+				<view class="content-card" v-for="(item, index) in activityList" :key="index" @click="goToDetail(item.id)">
 					<view class="card-left">
-						<image class="card-image" src="/static/welfare/mk02.png" mode="aspectFit"></image>
+						<image class="card-image" :src="item.image" mode="aspectFill"></image>
 					</view>
 					<view class="card-right">
-						<text class="card-title">长沙学院三下乡——益开法治文化活动</text>
+						<text class="card-title">{{ item.title }}</text>
 						<view class="card-info">
-							<text class="card-date">2024-06-11</text>
-							<text class="card-views">765</text>
+							<text class="card-date">{{ item.date }}</text>
+							<text class="card-views">{{ item.views }}</text>
 						</view>
 					</view>
 				</view>
@@ -49,8 +50,55 @@
 		},
 		data() {
 			return {
-				
+				activityList: [
+					{
+						id: 101,
+						title: '长沙学院三下乡——乡村振兴志愿服务活动',
+						image: '/static/welfare/hd101.jpg',
+						date: '2024-06-15',
+						views: '892'
+					},
+					{
+						id: 102,
+						title: '长沙学院三下乡——"童心圆梦"支教活动',
+						image: '/static/welfare/hd102.jpg',
+						date: '2024-06-18',
+						views: '756'
+					},
+					{
+						id: 103,
+						title: '长沙学院三下乡——农村电商帮扶计划',
+						image: '/static/welfare/hd103.jpg',
+						date: '2024-06-22',
+						views: '634'
+					},
+					{
+						id: 104,
+						title: '长沙学院三下乡——"健康乡村"医疗服务行动',
+						image: '/static/welfare/hd104.jpg',
+						date: '2024-06-25',
+						views: '578'
+					},
+					{
+						id: 105,
+						title: '长沙学院三下乡——乡村文化艺术节',
+						image: '/static/welfare/hd105.jpg',
+						date: '2024-06-28',
+						views: '721'
+					},
+					{
+						id: 106,
+						title: '长沙学院三下乡——"绿色家园"环保行动',
+						image: '/static/welfare/hd106.jpg',
+						date: '2024-06-30',
+						views: '543'
+					}
+				]
 			}
+		},
+		onLoad() {
+			// 当接口完成后，在这里调用获取数据的方法
+			// this.getActivityList();
 		},
 		methods: {
 			goBack() {
@@ -74,6 +122,27 @@
 				uni.switchTab({
 					url: routes[tab]
 				})
+			},
+			// 获取活动列表（接口完成后实现）
+			getActivityList() {
+				// 示例接口调用
+				/*
+				uni.request({
+					url: 'https://your-api-url/activities',
+					method: 'GET',
+					success: (res) => {
+						if (res.statusCode === 200 && res.data.code === 0) {
+							this.activityList = res.data.data;
+						}
+					}
+				});
+				*/
+			},
+			// 跳转到活动详情页
+			goToDetail(id) {
+				uni.navigateTo({
+					url: `/pages/welfare/xiangqing?id=${id}`
+				});
 			}
 		}
 	}

@@ -51,44 +51,44 @@
 			return {
 				newsList: [
 					{
-						id: 1,
-						title: '长沙学院文化宣传团赴公安县宣传文化活动',
-						image: '/static/welfare/f623169d-2d77-4358-80b2-bff196cedf3f.png',
+						id: 301,
+						title: '长沙学院文化宣传团公安县文化交流纪实',
+						image: '/static/welfare/zx301.jpg',
 						date: '2024-06-11',
 						views: '765'
 					},
 					{
-						id: 2,
-						title: '长沙学院三下乡——益开法治文化活动',
-						image: '/static/welfare/1db9a084-3788-47d0-9c69-86f80ad13e77.png',
+						id: 302,
+						title: '长沙学院法学院开展法治文化进乡村系列讲座',
+						image: '/static/welfare/zx302.png',
 						date: '2024-06-11',
 						views: '765'
 					},
 					{
-						id: 3,
-						title: '长沙学院三下乡——科技支农活动在宁乡县圆满举行',
-						image: '/static/welfare/f623169d-2d77-4358-80b2-bff196cedf3f.png',
+						id: 303,
+						title: '科技助农 | 长沙学院在宁乡县开展农业技术培训',
+						image: '/static/welfare/zx303.jpg',
 						date: '2024-06-15',
 						views: '532'
 					},
 					{
-						id: 4,
-						title: '长沙学院三下乡——教育帮扶活动走进汨罗市山区学校',
-						image: '/static/welfare/1db9a084-3788-47d0-9c69-86f80ad13e77.png',
+						id: 304,
+						title: '教育资源下沉 | 长沙学院师生走进汨罗市山区',
+						image: '/static/welfare/zx304.jpg',
 						date: '2024-06-20',
 						views: '621'
 					},
 					{
-						id: 5,
-						title: '长沙学院三下乡——医疗服务队为岳阳县居民提供义诊',
-						image: '/static/welfare/f623169d-2d77-4358-80b2-bff196cedf3f.png',
+						id: 305,
+						title: '健康服务进乡村 | 长沙学院医学院岳阳义诊纪实',
+						image: '/static/welfare/zx305.jpg',
 						date: '2024-06-25',
 						views: '487'
 					},
 					{
-						id: 6,
-						title: '长沙学院三下乡——环保宣传活动在浏阳市成功举办',
-						image: '/static/welfare/1db9a084-3788-47d0-9c69-86f80ad13e77.png',
+						id: 306,
+						title: '绿色家园共建设 | 长沙学院环保宣讲走进浏阳',
+						image: '/static/welfare/zx306.jpg',
 						date: '2024-06-30',
 						views: '398'
 					}
