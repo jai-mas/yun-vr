@@ -6,7 +6,7 @@
     <!-- 顶部轮播图 -->
     <swiper class="hot-museum-swiper" autoplay circular indicator-dots>
       <swiper-item v-for="(item, index) in hotMuseums" :key="index">
-        <view class="swiper-item" @click="goToDetail(item)">
+        <view class="swiper-item"@click="goToMuseum(item)">
           <image class="swiper-image" :src="item.image" mode="aspectFill"></image>
           <view class="swiper-info">
             <text class="museum-name">{{ item.name }}</text>
@@ -60,6 +60,7 @@ export default {
           name: '故宫博物馆',
           desc: '中国最大的古代文化艺术博物馆',
           image: '/static/map/test.jpeg',
+		  url:'https://www.720yun.com/vr/de925qOucbn',
           offsetX: 0
         },
         {
@@ -67,6 +68,7 @@ export default {
           name: '中国国家博物馆',
           desc: '展示中华五千年文明的重要窗口',
           image: '/static/map/test3.jpeg',
+		  url:'https://www.720yun.com/vr/de925qOucbn',
           offsetX: 0
         },
         {
@@ -74,6 +76,7 @@ export default {
           name: '上海博物馆',
           desc: '中国古代艺术的重要展示中心',
           image: '/static/map/test2.jpeg',
+		  url:'https://www.720yun.com/vr/de925qOucbn',
           offsetX: 0
         }
       ],
@@ -103,12 +106,23 @@ export default {
     }
   },
   methods: {
-    goToDetail(item) {
-      uni.navigateTo({
-        url: `/pages/museumDetail/museumDetail?id=${item.id}`
-      });
+    // goToDetail(item) {
+    //   uni.navigateTo({
+    //     url: `/pages/museumDetail/museumDetail?id=${item.id}`
+    //   });
+    // },
+goToMuseum(item) {
+      // 直接跳转到静态URL（H5适用）
+      if (process.env.VUE_APP_PLATFORM === 'h5') {
+        window.location.href = item.url;
+      }
+      // 小程序使用web-view跳转
+      else {
+        uni.navigateTo({
+          url: `/pages/webview/webview?url=${encodeURIComponent(item.url)}`
+        });
+      }
     },
-
     reserveMuseum(item) {
       uni.showToast({
         title: `已预约${item.name}`,
