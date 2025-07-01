@@ -47,7 +47,7 @@
   position: relative;
   top: 150px;
   width: 80%;
-  background-color: #252626;
+  background-color: white;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -72,11 +72,11 @@
   margin-bottom: 20px;
 }
 .float-ball-icon.data-v-785b515e {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin-bottom: 8px;
 }
 .float-ball-text.data-v-785b515e {
   font-size: 14px;
-  color: #ffffff;
+  color: #0d0505;
 }

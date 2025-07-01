@@ -31,12 +31,13 @@
   left: 0;
   right: 0;
   height: 50px;
-  background-color: #ffffff;
+  background-color: transparent;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   z-index: 999;
+  opacity: 1;
   /* 适配iPhone底部安全区 */
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
@@ -61,12 +62,12 @@
   margin-bottom: 2px;
 }
 .tab-text.data-v-704c80d8 {
-  font-size: 12px;
-  color: #7d7e80;
+  font-size: 15px;
+  color: #040507;
 }
 .active .tab-icon.data-v-704c80d8 {
-  color: #1989fa;
+  color: #ff0000;
 }
 .active-text.data-v-704c80d8 {
-  color: #1989fa;
+  color: #ff0000;
 }

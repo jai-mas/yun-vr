@@ -2,7 +2,6 @@
   <view class="float-ball-container" v-if="visible">
     <view class="float-ball-mask" @tap="close"></view>
     <view class="float-ball-content">
-      <view class="float-ball-title">导览选项</view>
       <view class="float-ball-grid">
         <view v-for="(item, index) in options" :key="index" class="float-ball-item" @tap="handleSelect(item)">
           <image :src="item.icon" class="float-ball-icon" mode="aspectFit"></image>
@@ -15,7 +14,6 @@
 
 <script>
 import router from '@/common/router.js'
-
 export default {
   name: 'FloatBall',
   props: {
@@ -30,37 +28,37 @@ export default {
         {
           id: 'option1',
           text: '云上展馆',
-          icon: '/static/navigation/cloud-museum.png',
+          icon: '/static/navigation/1.png',
           url: '/pages/exhibition/exhibition'
         },
         {
           id: 'option2',
           text: '探索发现',
-          icon: '/static/navigation/discover.png',
+          icon: '/static/navigation/2.png',
           url: '/pages/tansuo/faxian'
         },
         {
           id: 'option3',
           text: '文创艺术',
-          icon: '/static/navigation/art.png',
+          icon: '/static/navigation/3.png',
           url: '/pages/MyCreation/MyCreation'
         },
         {
           id: 'option4',
           text: '特色物产',
-          icon: '/static/navigation/product.png',
+          icon: '/static/navigation/4.png',
           url: '/pages/Products/products'
         },
         {
           id: 'option5',
           text: '公益教育',
-          icon: '/static/navigation/education.png',
+          icon: '/static/navigation/5.png',
           url: '/pages/welfare/welfare-main'
         },
         {
           id: 'option6',
           text: '浏览云古镇',
-          icon: '/static/navigation/look-cloud.png',
+          icon: '/static/navigation/6.png',
           url: ''
         }
       ]
@@ -110,7 +108,7 @@ export default {
   position: relative;
   top: 150px;
   width: 80%;
-  background-color: rgba(37, 38, 38, 1);
+  background-color: white;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -139,13 +137,13 @@ export default {
 }
 
 .float-ball-icon {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin-bottom: 8px;
 }
 
 .float-ball-text {
   font-size: 14px;
-  color: #ffffff;
+  color: #0d0505;
 }
 </style>

@@ -63,15 +63,15 @@ export default {
         {
           name: 'navigation',
           text: '导览',
-          icon: '/static/icons/navigation-active.jpg',
-          activeIcon: '/static/icons/navigation-active.jpg',
+          icon: '/static/icons/navigation-active.png',
+          activeIcon: '/static/icons/navigation-active.png',
           url: '/pages/Navigation/Navigation'
         },
         {
           name: 'my',
           text: '我的',
-          icon: '/static/icons/my-active.jpg',
-          activeIcon: '/static/icons/my-active.jpg',
+          icon: '/static/icons/my.png',
+          activeIcon: '/static/icons/my.png',
           url: '/pages/mine/mine'
         }
       ]
@@ -153,12 +153,13 @@ export default {
   left: 0;
   right: 0;
   height: 50px;
-  background-color: #ffffff;
+  background-color: transparent;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   z-index: 999;
+  opacity: 1;
 
   /* 适配iPhone底部安全区 */
   padding-bottom: constant(safe-area-inset-bottom);
@@ -190,15 +191,15 @@ export default {
 }
 
 .tab-text {
-  font-size: 12px;
-  color: #7d7e80;
+  font-size: 15px;
+  color: #040507;
 }
 
 .active .tab-icon {
-  color: #1989fa;
+  color: #ff0000;
 }
 
 .active-text {
-  color: #1989fa;
+  color: #ff0000;
 }
 </style>
