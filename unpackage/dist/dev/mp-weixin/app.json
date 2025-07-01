@@ -18,7 +18,8 @@
     "pages/tansuo/detail01",
     "pages/CheckIn/CheckIn",
     "pages/mine/mine",
-    "pages/mine/publish/publish"
+    "pages/mine/publish/publish",
+    "pages/webview/webview"
   ],
   "subPackages": [],
   "window": {

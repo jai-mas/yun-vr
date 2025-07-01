@@ -4,6 +4,27 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/CheckIn/CheckIn",
+          "pathName": "pages/CheckIn/CheckIn",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/webview/webview",
+          "pathName": "pages/webview/webview",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/exhibition/exhibition",
+          "pathName": "pages/exhibition/exhibition",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/Products/products",
           "pathName": "pages/Products/products",
           "query": "",
@@ -19,5 +40,9 @@
         }
       ]
     }
+  },
+  "projectname": "yunVr",
+  "setting": {
+    "compileHotReLoad": true
   }
 }

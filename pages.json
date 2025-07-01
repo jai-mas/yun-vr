@@ -140,7 +140,13 @@
 				"navigationBarTitleText": "用户发布",
 				"navigationStyle": "custom"
 			}
-		}
+		},
+		 {
+		           "path": "pages/webview/webview",
+		           "style": {
+		             "navigationBarTitleText": "云博物馆"
+		           }
+		         }
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

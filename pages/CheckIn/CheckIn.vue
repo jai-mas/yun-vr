@@ -13,7 +13,7 @@
           <text class="title">打卡列表</text>
           <image 
             class="avatar" 
-            src="/static/product/1.png" 
+            src="/static/product/avatar.png" 
             mode="widthFix"
           ></image>
         </view>
@@ -23,8 +23,9 @@
       <view class="list-container checked-list">
         <text class="section-title">已打卡</text>
         <view class="items-wrapper">
-          <view class="check-item" v-for="(item, index) in checkedList" :key="index" @click="handleItemClick(item)">
+          <view class="check-item" v-for="(item, index) in checkedList" :key="index" @click="goToMuseum(item)">
             <image class="item-img" :src="item.img" mode="aspectFill"></image>
+            <text class="item-name">{{item.name}}</text>
             <image class="arrow-icon" src="/static/common/nav-right-icon.png" mode="widthFix"></image>
           </view>
         </view>
@@ -34,15 +35,16 @@
       <view class="list-container unchecked-list">
         <text class="section-title">未打卡</text>
         <view class="items-wrapper">
-          <view class="check-item" v-for="(item, index) in uncheckedList" :key="index" @click="toCloudMuseum">
+          <view class="check-item" v-for="(item, index) in uncheckedList" :key="index" @click="goToMuseum(item)">
             <image class="item-img" :src="item.img" mode="aspectFill"></image>
+            <text class="item-name">{{item.name}}</text>
             <image class="arrow-icon" src="/static/common/nav-right-icon.png" mode="widthFix"></image>
           </view>
         </view>
       </view>
 	  
     <!-- 底部导航栏 -->
-	<TabBar current="CheckIn" />
+	<TabBar current="my" />
 	  
     </view>
   </view>
@@ -56,22 +58,58 @@ export default {
   components:{ TabBar },
   data() {
     return {
-      checkedList: [ 
-        { img: '/static/home/home-windows-image-1.png' },
-        { img: '/static/home/home-windows-image-2.png' },
-        { img: '/static/home/home-windows-image-1.png' },
-        { img: '/static/home/home-windows-image-2.png' }
+      checkedList: [
+        {
+          id: 1,
+          name: '长沙市博物馆',
+          img: '/static/checkin/m1.png',
+          url: 'https://www.720yun.com/t/3evkuerh5f7?scene_id=38521806' 
+        },
+        {
+          id: 2,
+          name: '韶山毛泽东同志纪念馆',
+          img: '/static/checkin/m2.png',
+          url: 'https://www.720yun.com/t/8bf2baf5jln?scene_id=706908' 
+        }
       ],
-      uncheckedList: [ 
-        { img: '/static/product/p2.png' },
-        { img: '/static/home/home-windows-image-4.png' },
-		{ img: '/static/home/home-windows-image-5.png' },
-		{ img: '/static/home/home-windows-image-1.png' },
-		{ img: '/static/home/home-windows-image-3.png' }
+      uncheckedList: [
+        {
+          id: 3,
+          name: '湖南省地质博物馆',
+          img: '/static/checkin/m3.png',
+          url: 'https://www.720yun.com/t/aa3jtdwfOk2?scene_id=13097270' 
+        },
+        {
+          id: 4,
+          name: '隆平水稻博物馆',
+          img: '/static/checkin/m4.png',
+          url: 'https://www.720yun.com/t/94vkiyiy087?scene_id=34409322' 
+        },
+        {
+          id: 5,
+          name: '雷锋纪念馆',
+          img: '/static/checkin/m5.png',
+          url: 'https://www.720yun.com/t/daakibqyp8q?scene_id=124562138' 
+        },
+        {
+          id: 6,
+          name: '湘绣博物馆',
+          img: '/static/checkin/m6.png',
+          url: 'https://www.kuleiman.com/161810/879473/' 
+        },
+        {
+          id: 7,
+          name: '谢子龙影像艺术馆',
+          img: '/static/checkin/m7.png',
+          url: 'https://www.720yun.com/t/e2vkz7f7s89?scene_id=81587874' 
+        }
       ]
     }
   },
   methods: {
+    goBack() { 
+      uni.navigateBack();
+    },
     handleItemClick(item) { 
       console.log('点击已打卡项', item);
     },
@@ -85,6 +123,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/* 样式部分完全保持不变 */
 .checkIn-container {
   position: relative;
   width: 100vw;
@@ -107,24 +146,22 @@ export default {
     display: flex;
     flex-direction: column;
     margin-top: 60px;
-    /* 扣除底部35vh空间给导航栏 */
     padding-bottom: 35vh;
     box-sizing: border-box;
-    min-height: 0; /* 确保flex子元素可以收缩 */
+    min-height: 0;
   }
 
-  /* 头部样式 */
   .header {
     display: flex;
     flex-direction: column;
     padding: 20rpx;
+    margin-bottom: -20rpx;
     
     .top-row {
-      height: 60rpx; // 控制返回按钮行高度
+      height: 60rpx;
       display: flex;
       align-items: center;
       
-      /*返回按钮*/
       .back-icon {
         width: 45rpx;
         height: 45rpx;
@@ -132,41 +169,36 @@ export default {
       }
     }
 
-    /*标题+头像*/
     .bottom-row {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end; // 标题和头像底部对齐
+      align-items: flex-end;
       margin-top: -18px;
       
-      /*标题*/
       .title {
         font-size: 32px;
         font-weight: bold;
         color: #555555;
-        margin-bottom: 0; // 移除默认底部间距
+        margin-bottom: 0;
         margin-left: 20px;
       }
       
-      /*头像*/
       .avatar {
-        width: 120rpx;
-        height: 120rpx;
+        width: 150rpx;
+        height: 150rpx;
         border-radius: 50%;
         margin-right: 60rpx;
-		border: 6rpx solid #fafafa;
       }
     }
   }
 
-  /* 列表容器样式 */
   .list-container {
     flex: 1;
     padding: 20rpx 40rpx;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    min-height: 0; /* 确保flex子元素可以收缩 */
+    min-height: 0;
     
     .section-title {
       display: block;
@@ -175,27 +207,25 @@ export default {
       margin-bottom: 20rpx;
       font-weight: bold;
       text-align: left;
-	  margin-left: 15px;
+      margin-left: 15px;
     }
     
     .items-wrapper {
       flex: 1;
-      background-color: rgba(255, 255, 255, 0.3); /* 提高外层矩形透明度 */
+      background-color: rgba(255, 255, 255, 0.3);
       border: 0.4rpx solid #b4ccaf;
-	  border-radius: 40rpx;
-      //padding: 20rpx 60rpx 20rpx 25rpx;/*前面上下，后面左右 ;上右下左*/
-	  padding: 20rpx 25rpx;
+      border-radius: 40rpx;
+      padding: 20rpx 25rpx;
       box-sizing: border-box;
-      overflow-y: scroll; /* 改为scroll始终显示滚动条 */
+      overflow-y: scroll;
       display: flex;
       flex-direction: column;
       gap: 15rpx;
-      height: 460rpx; /* 固定高度，确保能显示3个内容 */
-      min-height: 460rpx; /* 最小高度 */
+      height: 460rpx;
+      min-height: 460rpx;
       
-      /* 滚动条样式 - uniapp兼容 */
       &::-webkit-scrollbar {
-        width: 12rpx; /* 增加滚动条宽度 */
+        width: 12rpx;
         background-color: transparent;
       }
       
@@ -216,25 +246,30 @@ export default {
         background: rgba(80, 80, 80, 0.9);
       }
       
-      /* 打卡项样式 */
       .check-item {
         width: 100%;
         height: 133rpx;
-        background-color: rgba(102, 123, 105, 0.15); /* 提高内容矩形透明度 */
+        background-color: rgba(102, 123, 105, 0.15);
         border: 1rpx solid #d3d3d3;
-		border-radius: 35rpx;
+        border-radius: 35rpx;
         display: flex;
         align-items: center;
         padding: 0 30rpx;
         box-sizing: border-box;
-        flex-shrink: 0; /* 防止项目被压缩 */
+        flex-shrink: 0;
         
         .item-img {
           width: 120rpx;
           height: 90rpx;
           border-radius: 10rpx;
           margin-right: 20px;
-		  //border: 1px solid #afafaf;
+        }
+        
+        .item-name {
+          font-size: 28rpx;
+          color: #333;
+          margin-left: 20rpx;
+          flex: 1;
         }
         
         .arrow-icon {
@@ -246,22 +281,19 @@ export default {
     }
   }
   
-  /* 已打卡列表样式 */
   .checked-list {
     margin-bottom: 10rpx;
-    flex: 1; /* 平分剩余空间 */
+    flex: 1;
     display: flex;
     flex-direction: column;
-	margin-bottom: 140px;
+    margin-bottom: 140px;
   }
   
-  /* 未打卡列表样式 */
   .unchecked-list {
     margin-top: 10rpx;
-    flex: 1; /* 平分剩余空间 */
+    flex: 1;
     display: flex;
     flex-direction: column;
   }
-  
 }
 </style>
