@@ -2,20 +2,16 @@
   <view class="checkIn-container">
     <!-- 背景图 -->
     <image src="/static/product/bg2.png" class="background"></image>
-    
+
     <!-- 内容区域 -->
     <view class="content">
       <!-- 头部区域：标题 + 返回按钮 -->
       <view class="header">
-        
+
         <!-- 标题和头像一行 -->
         <view class="bottom-row">
           <text class="title">打卡列表</text>
-          <image 
-            class="avatar" 
-            src="/static/product/avatar.png" 
-            mode="widthFix"
-          ></image>
+          <image class="avatar" src="/static/product/avatar.png" mode="widthFix"></image>
         </view>
       </view>
 
@@ -25,7 +21,7 @@
         <view class="items-wrapper">
           <view class="check-item" v-for="(item, index) in checkedList" :key="index" @click="goToMuseum(item)">
             <image class="item-img" :src="item.img" mode="aspectFill"></image>
-            <text class="item-name">{{item.name}}</text>
+            <text class="item-name">{{ item.name }}</text>
             <image class="arrow-icon" src="/static/common/nav-right-icon.png" mode="widthFix"></image>
           </view>
         </view>
@@ -37,25 +33,23 @@
         <view class="items-wrapper">
           <view class="check-item" v-for="(item, index) in uncheckedList" :key="index" @click="goToMuseum(item)">
             <image class="item-img" :src="item.img" mode="aspectFill"></image>
-            <text class="item-name">{{item.name}}</text>
+            <text class="item-name">{{ item.name }}</text>
             <image class="arrow-icon" src="/static/common/nav-right-icon.png" mode="widthFix"></image>
           </view>
         </view>
       </view>
-	  
-    <!-- 底部导航栏 -->
-	<TabBar current="my" />
-	  
+
+      <!-- 底部导航栏 -->
+      <TabBar current="CheckIn" />
     </view>
   </view>
 </template>
 
 <script>
-import router from '@/common/router.js'
 import { TabBar } from "../../compents/TabBar.vue"
 export default {
   name: 'CheckIn',
-  components:{ TabBar },
+  components: { TabBar },
   data() {
     return {
       checkedList: [
@@ -63,13 +57,13 @@ export default {
           id: 1,
           name: '长沙市博物馆',
           img: '/static/checkin/m1.png',
-          url: 'https://www.720yun.com/t/3evkuerh5f7?scene_id=38521806' 
+          url: 'https://www.720yun.com/t/3evkuerh5f7?scene_id=38521806'
         },
         {
           id: 2,
           name: '韶山毛泽东同志纪念馆',
           img: '/static/checkin/m2.png',
-          url: 'https://www.720yun.com/t/8bf2baf5jln?scene_id=706908' 
+          url: 'https://www.720yun.com/t/8bf2baf5jln?scene_id=706908'
         }
       ],
       uncheckedList: [
@@ -77,46 +71,47 @@ export default {
           id: 3,
           name: '湖南省地质博物馆',
           img: '/static/checkin/m3.png',
-          url: 'https://www.720yun.com/t/aa3jtdwfOk2?scene_id=13097270' 
+          url: 'https://www.720yun.com/t/aa3jtdwfOk2?scene_id=13097270'
         },
         {
           id: 4,
           name: '隆平水稻博物馆',
           img: '/static/checkin/m4.png',
-          url: 'https://www.720yun.com/t/94vkiyiy087?scene_id=34409322' 
+          url: 'https://www.720yun.com/t/94vkiyiy087?scene_id=34409322'
         },
         {
           id: 5,
           name: '雷锋纪念馆',
           img: '/static/checkin/m5.png',
-          url: 'https://www.720yun.com/t/daakibqyp8q?scene_id=124562138' 
+          url: 'https://www.720yun.com/t/daakibqyp8q?scene_id=124562138'
         },
         {
           id: 6,
           name: '湘绣博物馆',
           img: '/static/checkin/m6.png',
-          url: 'https://www.kuleiman.com/161810/879473/' 
+          url: 'https://www.kuleiman.com/161810/879473/'
         },
         {
           id: 7,
           name: '谢子龙影像艺术馆',
           img: '/static/checkin/m7.png',
-          url: 'https://www.720yun.com/t/e2vkz7f7s89?scene_id=81587874' 
+          url: 'https://www.720yun.com/t/e2vkz7f7s89?scene_id=81587874'
         }
       ]
     }
   },
   methods: {
-    goBack() { 
-      uni.navigateBack();
-    },
-    handleItemClick(item) { 
-      console.log('点击已打卡项', item);
-    },
-    toCloudMuseum() { 
-      uni.navigateTo({
-        url: '/pages/cloudMuseum/cloudMuseum'
-      });
+    goToMuseum(item) {
+      // 直接跳转到静态URL（H5适用）
+      if (process.env.VUE_APP_PLATFORM === 'h5') {
+        window.location.href = item.url;
+      }
+      // 小程序使用web-view跳转
+      else {
+        uni.navigateTo({
+          url: `/pages/webview/webview?url=${encodeURIComponent(item.url)}`
+        });
+      }
     }
   }
 }
@@ -129,7 +124,7 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  
+
   .background {
     position: absolute;
     width: 100%;
@@ -138,7 +133,7 @@ export default {
     top: 0;
     left: 0;
   }
-  
+
   .content {
     position: relative;
     z-index: 1;
@@ -156,12 +151,12 @@ export default {
     flex-direction: column;
     padding: 20rpx;
     margin-bottom: -20rpx;
-    
+
     .top-row {
       height: 60rpx;
       display: flex;
       align-items: center;
-      
+
       .back-icon {
         width: 45rpx;
         height: 45rpx;
@@ -174,7 +169,7 @@ export default {
       justify-content: space-between;
       align-items: flex-end;
       margin-top: -18px;
-      
+
       .title {
         font-size: 32px;
         font-weight: bold;
@@ -182,7 +177,7 @@ export default {
         margin-bottom: 0;
         margin-left: 20px;
       }
-      
+
       .avatar {
         width: 150rpx;
         height: 150rpx;
@@ -199,7 +194,7 @@ export default {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    
+
     .section-title {
       display: block;
       font-size: 24px;
@@ -209,7 +204,7 @@ export default {
       text-align: left;
       margin-left: 15px;
     }
-    
+
     .items-wrapper {
       flex: 1;
       background-color: rgba(255, 255, 255, 0.3);
@@ -223,29 +218,29 @@ export default {
       gap: 15rpx;
       height: 460rpx;
       min-height: 460rpx;
-      
+
       &::-webkit-scrollbar {
         width: 12rpx;
         background-color: transparent;
       }
-      
+
       &::-webkit-scrollbar-track {
         background: rgba(200, 200, 200, 0.5);
         border-radius: 6rpx;
         margin: 4rpx;
       }
-      
+
       &::-webkit-scrollbar-thumb {
         background: rgba(100, 100, 100, 0.8);
         border-radius: 6rpx;
         border: 2rpx solid rgba(255, 255, 255, 0.3);
         min-height: 40rpx;
       }
-      
+
       &::-webkit-scrollbar-thumb:hover {
         background: rgba(80, 80, 80, 0.9);
       }
-      
+
       .check-item {
         width: 100%;
         height: 133rpx;
@@ -257,21 +252,21 @@ export default {
         padding: 0 30rpx;
         box-sizing: border-box;
         flex-shrink: 0;
-        
+
         .item-img {
           width: 120rpx;
           height: 90rpx;
           border-radius: 10rpx;
           margin-right: 20px;
         }
-        
+
         .item-name {
           font-size: 28rpx;
           color: #333;
           margin-left: 20rpx;
           flex: 1;
         }
-        
+
         .arrow-icon {
           width: 30rpx;
           height: 30rpx;
@@ -280,7 +275,7 @@ export default {
       }
     }
   }
-  
+
   .checked-list {
     margin-bottom: 10rpx;
     flex: 1;
@@ -288,7 +283,7 @@ export default {
     flex-direction: column;
     margin-bottom: 140px;
   }
-  
+
   .unchecked-list {
     margin-top: 10rpx;
     flex: 1;

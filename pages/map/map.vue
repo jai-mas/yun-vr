@@ -98,7 +98,7 @@
 
     <!-- 遮罩层 -->
     <view class="overlay" v-if="showDetailPanel" @click="closeDetailPanel"></view>
-    <TabBar current="" />
+    <TabBar current="map" />
   </view>
 </template>
 

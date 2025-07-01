@@ -6,11 +6,11 @@
      export default {
        data() {
          return {
-           url: ''
+           pageurl: ''
          }
        },
        onLoad(options) {
-         this.url = decodeURIComponent(options.url || '');
+         this.pageurl = decodeURIComponent(options.url || '');
        }
      }
      </script>

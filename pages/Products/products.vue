@@ -2,10 +2,10 @@
   <view class="product-container">
     <!-- 背景图片 -->
     <image src="/static/product/bg.png" class="background"></image>
-    
+
     <!-- 顶部标题 -->
     <view class="title">特色·物产</view>
-    
+
     <!-- 主商品展示区 -->
     <view class="main-product-container">
       <!-- 左侧标签 -->
@@ -14,17 +14,13 @@
           {{ tag }}
         </view>
       </view>
-      
+
       <!-- 主商品内容 -->
       <view class="main-product">
-        <image 
-          :src="currentProduct.image" 
-          class="main-image" 
-          @click="navigateToDetail"
-        />
+        <image :src="currentProduct.image" class="main-image" @click="navigateToDetail" />
         <view class="product-name">{{ currentProduct.name }}</view>
       </view>
-      
+
       <!-- 右侧标签 -->
       <view class="side-tags right-tags">
         <view v-for="(tag, index) in rightTags" :key="index" class="tag">
@@ -32,52 +28,37 @@
         </view>
       </view>
     </view>
-    
+
     <!-- 商品描述 -->
     <view class="product-desc">
       <view v-for="(line, index) in productDescLines" :key="index" class="desc-line">
         {{ line }}
       </view>
     </view>
-    
+
     <!-- 操作提示 -->
     <view class="tip">
       <image src="/static/product/arrow.png" class="arrow-fade"></image>
     </view>
-    
+
     <!-- 商品列表 -->
-    <scroll-view 
-      class="product-list" 
-      scroll-y 
-      :scroll-top="scrollTop"
-      :scroll-with-animation="true"
-      @scroll="handleScroll"
-    >
+    <scroll-view class="product-list" scroll-y :scroll-top="scrollTop" :scroll-with-animation="true"
+      @scroll="handleScroll">
       <view class="list-container">
-        <view 
-          v-for="(product, index) in products" 
-          :key="index" 
-          class="product-item"
-          :id="'product-' + index"
-          :class="{ 'active': currentIndex === index }"
-          @click="selectProduct(index)"
-        >
+        <view v-for="(product, index) in products" :key="index" class="product-item" :id="'product-' + index"
+          :class="{ 'active': currentIndex === index }" @click="selectProduct(index)">
           <view class="item-content">
-            <image 
-              :src="product.image" 
-              class="product-image"
-              :class="{ 'active-image': currentIndex === index }"
-              mode="aspectFill"
-            />
+            <image :src="product.image" class="product-image" :class="{ 'active-image': currentIndex === index }"
+              mode="aspectFill" />
             <text class="item-name">{{ product.name }}</text>
             <text class="item-ellipsis" v-if="currentIndex !== index">...</text>
           </view>
         </view>
       </view>
     </scroll-view>
-	
+
     <!-- 底部导航栏 -->
-	<TabBar current="products"/>
+    <TabBar current="products"></TabBar>
   </view>
 </template>
 
@@ -85,7 +66,7 @@
 import { TabBar } from "../../compents/TabBar.vue"
 export default {
   name: 'Products',
-  components:{ TabBar },
+  components: { TabBar },
   data() {
     return {
       currentIndex: 0,
@@ -115,12 +96,12 @@ export default {
           desc: '瑶族山村手工干制|海味浓郁，原汁原味',
           tags: ['天然无添加', '海味干货', '瑶族非遗', '手工制品', '高蛋白', '口感丰富', '煲汤圣品']
         },
-		{
-		  name: '毛尖',
-		  image: '/static/product/p5.png',
-		  desc: '湖南名茶|回甘滋味，清香四溢',
-		  tags: [ '明前嫩芽', '高山云雾', '抗氧化', '滋养身心', '传统炒青', '中国地理标志']
-		},
+        {
+          name: '毛尖',
+          image: '/static/product/p5.png',
+          desc: '湖南名茶|回甘滋味，清香四溢',
+          tags: ['明前嫩芽', '高山云雾', '抗氧化', '滋养身心', '传统炒青', '中国地理标志']
+        },
         {
           name: '洞庭银鱼',
           image: '/static/product/p6.png',
@@ -147,32 +128,29 @@ export default {
   methods: {
     selectProduct(index) {
       if (this.currentIndex === index) return;
-      
+
       this.currentIndex = index;
-      
+
       // 计算滚动位置，确保选中项完整显示在视图中
       const itemHeight = 150; // 每个商品项的高度
       const listHeight = 350; // 列表可视区域高度(35vh约等于350rpx)
       const visibleItems = Math.floor(listHeight / itemHeight);
-      
+
       // 确保选中项在可视区域中间位置
       let targetScrollTop = index * itemHeight - (listHeight - itemHeight) / 2;
-      
+
       // 边界检查
       targetScrollTop = Math.max(0, targetScrollTop);
       targetScrollTop = Math.min(targetScrollTop, (this.products.length - 1) * itemHeight - (listHeight - itemHeight));
-      
+
       this.scrollTop = targetScrollTop;
     },
     handleScroll(e) {
       // 可以在这里添加自定义滚动逻辑
     },
     navigateToDetail() {
-      // 显示当前产品详情，而不是跳转到不存在的页面
-      uni.showToast({
-        title: `${this.currentProduct.name}详情页开发中`,
-        icon: 'none',
-        duration: 2000
+      uni.navigateTo({
+        url: `/pages/product/detail?id=${this.currentIndex}`
       })
     }
   }
@@ -187,14 +165,14 @@ export default {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  
+
   .background {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 1;
   }
-  
+
   .title {
     position: relative;
     z-index: 2;
@@ -204,9 +182,9 @@ export default {
     text-align: center;
     margin-top: 130rpx;
     margin-bottom: 80rpx;
-    text-shadow: 0 3rpx 3rpx rgba(0, 0, 0, 0.3); 
+    text-shadow: 0 3rpx 3rpx rgba(0, 0, 0, 0.3);
   }
-  
+
   .main-product-container {
     position: relative;
     z-index: 2;
@@ -216,25 +194,25 @@ export default {
     width: 100%;
     margin-bottom: 40rpx;
   }
-  
+
   .side-tags {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 30%;
-    
+
     &.left-tags {
       align-items: flex-end;
       padding-right: 10rpx;
       margin-top: 20px;
     }
-    
+
     &.right-tags {
       align-items: flex-start;
       padding-left: 10rpx;
       margin-top: -20px;
     }
-    
+
     .tag {
       color: #2e3f35;
       font-size: 25rpx;
@@ -244,29 +222,29 @@ export default {
       border-radius: 30rpx;
       background: transparent;
       text-align: center;
-      box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.1);
+      box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
   }
-  
+
   .main-product {
     width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     .main-image {
       width: 340rpx;
       height: 340rpx;
       border-radius: 50%;
       border: 2rpx solid #494949;
       transition: all 0.3s ease;
-      
+
       &:active {
         transform: scale(0.95);
       }
     }
-    
+
     .product-name {
       font-size: 36rpx;
       font-weight: bold;
@@ -276,7 +254,7 @@ export default {
       letter-spacing: 15rpx;
     }
   }
-  
+
   .product-desc {
     position: relative;
     z-index: 2;
@@ -284,14 +262,14 @@ export default {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20rpx;
-    
+
     .desc-line {
       font-size: 28rpx;
       color: #233028;
       text-align: center;
     }
   }
-  
+
   .tip {
     position: relative;
     margin-bottom: 10rpx;
@@ -301,14 +279,14 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     .arrow-fade {
       width: 120rpx;
       height: 70rpx;
       animation: arrowFade 1.5s infinite;
     }
   }
-  
+
   /* 商品列表样式修改 */
   .product-list {
     margin-top: 10px;
@@ -317,29 +295,25 @@ export default {
     height: 35vh;
     width: 100%;
     -webkit-overflow-scrolling: touch;
-    
+
     /* 新增的渐变遮罩效果 */
-    mask-image: linear-gradient(
-      to bottom, 
-      transparent 0%, 
-      black 9%,
-      black 91%, 
-      transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-      to bottom, 
-      transparent 0%, 
-      black 5%,
-      black 95%, 
-      transparent 100%
-    );
-    
+    mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        black 9%,
+        black 91%,
+        transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        black 5%,
+        black 95%,
+        transparent 100%);
+
     .list-container {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    
+
     .product-item {
       width: 100%;
       display: flex;
@@ -348,27 +322,27 @@ export default {
       justify-content: center;
       padding: 15rpx 0;
       transition: all 0.3s ease;
-      
+
       .item-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        
+
         .product-image {
           width: 150rpx;
           height: 150rpx;
           border-radius: 50%;
           border: 2rpx solid #eee;
           transition: all 0.3s ease;
-          
+
           &.active-image {
             width: 200rpx;
             height: 200rpx;
             border-color: #808000;
           }
         }
-        
+
         .item-name {
           font-size: 30rpx;
           color: #2b3b32;
@@ -376,7 +350,7 @@ export default {
           text-align: center;
           transition: all 0.3s ease;
         }
-        
+
         .item-ellipsis {
           font-size: 35rpx;
           color: #2b3b32;
@@ -384,7 +358,7 @@ export default {
           font-weight: bold;
         }
       }
-      
+
       &.active {
         .item-name {
           font-size: 34rpx;
@@ -397,8 +371,19 @@ export default {
 }
 
 @keyframes arrowFade {
-  0% { opacity: 1; transform: translateY(0); }
-  50% { opacity: 0.5; transform: translateY(10rpx); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(10rpx);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
