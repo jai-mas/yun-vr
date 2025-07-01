@@ -4,6 +4,12 @@
 	min-height: 100vh;
 	padding: 20rpx;
 }
+.back-icon {
+      width: 32rpx;
+      height: 32rpx;
+      margin-right: 10rpx;
+	  margin-top: 60rpx;
+}
 .bg-image {
 	position: absolute;
 	top: 0;

@@ -2,6 +2,7 @@
 	<view class="creation-container">
 		<!-- 背景图 -->
 		<image class="bg-image" src="/static/navigation/bg.jpg" mode="aspectFill"></image>
+		<image class="back-icon" src="/static/map/arrow.png" @click="goBack" mode=""></image>
 
 		<!-- 小背景图，创建景深效果 -->
 		<image class="small-bg-image" src="/static/navigation/mc-bg.png" mode="aspectFill"></image>
@@ -90,6 +91,9 @@ export default {
 		this.getCreationList()
 	},
 	methods: {
+		goBack(){
+			uni.navigateBack();
+		},
 		// 获取作品列表
 		getCreationList() {
 			this.loading = true
@@ -188,7 +192,12 @@ export default {
 	min-height: 100vh;
 	padding: 20rpx;
 }
-
+.back-icon {
+      width: 32rpx;
+      height: 32rpx;
+      margin-right: 10rpx;
+	  margin-top: 60rpx;
+    }
 .bg-image {
 	position: absolute;
 	top: 0;
