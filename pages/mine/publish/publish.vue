@@ -58,12 +58,10 @@ export default{
 	data(){
 		return{
 			cardItems:[
-				{id: 1, title: "标题一", body:"这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一这里是内容一"},
-				{id: 2, title: "标题二", body:"这里是内容二"},
-				{id: 3, title: "标题三", body:"这里是内容三"},
-				{id: 4, title: "标题三", body:"这里是内容三"},
-				{id: 5, title: "标题三", body:"这里是内容三"},
-				{id: 6, title: "标题三", body:"这里是内容三"},
+				{id: 1, title: "\"字觉\"解压印章套装（岳麓书院特别版）", body:"深度结合岳麓书院文化底蕴的解压文创，精选书院历史中最具代表性的12枚篆刻印章为原型，包含：朱熹\"忠孝廉节\"四字教规、康熙\"学达性天\"御匾篆文、王文清《岳麓书院学规》节选印章等。每枚印章采用食品级硅胶材质精密铸造，通过1:1复刻技术还原原碑刻的笔触韵味，印章尺寸为5cm×5cm×3cm的立方体，符合人体工学设计。"},
+				{id: 2, title: "\"漆韵\"手机壳", body:"大漆工艺浮雕纹样，0.3mm超薄设计，兼容磁吸充电，6色可选。"},
+				{id: 3, title: "\"敦煌飞虹\"丝巾", body:"数码印花真丝方巾，提取莫高窟藻井色谱，90cm×90cm，渐变云纹设计。"},
+				{id: 4, title: "\"青花记忆\"陶瓷杯", body:"白瓷杯身手绘传统青花纹样，搭配现代渐变釉色，10cm高度，诠释新中式美学。"}
 			],
 			isAdd: false,
 			newCard: {title: '', body: ''},
@@ -228,11 +226,11 @@ export default{
 		.card-title-box{
 			height: 3vh;
 			margin-top: 1vh;
-			width: 75vw;
+			width: 70vw;
 			margin-left: 5vw;
 			overflow: clip;
 			.card-title{
-				font-size: 40rpx;
+				font-size: 35rpx;
 			}
 		}
 		.card-body-box{
@@ -244,6 +242,7 @@ export default{
 			overflow-y: hidden;
 			.card-body{
 				font-size: 30rpx;
+				color: #5a5a5a;
 			}
 		}
 		.pub-button{
@@ -254,22 +253,21 @@ export default{
 			justify-content: center;
 			position: absolute;
 			bottom: 1vh;
-			.publish-card-button{
-				width: 20vw;
-				height: 100%;
-				border-radius: 2vh;
-				border: 1rpx solid #607460;
-				background-color: #a9cdaa;
-				font-size: 30rpx;
-				line-height: 4vh;
-			}
+			.publish-card-button,
 			.delete-card-button{
 				width: 20vw;
 				height: 100%;
 				border-radius: 2vh;
-				border: 1rpx solid #a9cdaa;
 				font-size: 30rpx;
 				line-height: 4vh;
+				box-shadow: 3rpx 3rpx 5rpx 5rpx rgba(200, 200, 200, 0.3);
+			}
+			.publish-card-button{
+				border: 1rpx solid #607460;
+				background-color: #a9cdaa;
+			}
+			.delete-card-button{
+				border: 1rpx solid #607460;
 			}
 		}
 	}

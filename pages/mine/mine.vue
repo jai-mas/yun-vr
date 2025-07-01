@@ -14,19 +14,19 @@
 			</view>
 		</view>
 		<view class="mine-list">
-			<button class="mine-button" style="background-image: url('/static/mine/mine-bg.jpg');"
+			<button class="mine-button" style="background-image: url('/static/mine/bg-1.jpg');"
 				@click="toClock()">
 				去打卡
 			</button>
-			<button class="mine-button" style="background-image: url('/static/mine/mine-bg.jpg');"
+			<button class="mine-button" style="background-image: url('/static/mine/bg-2.jpg');"
 				@click="toLike()">
 				我的点赞
 			</button>
-			<button class="mine-button" style="background-image: url('/static/mine/mine-bg.jpg');"
+			<button class="mine-button" style="background-image: url('/static/mine/bg-3.jpg');"
 				@click="toCC()">
 				我的文创
 			</button>
-			<button class="mine-button" style="background-image: url('/static/mine/mine-bg.jpg');"
+			<button class="mine-button" style="background-image: url('/static/mine/bg-4.jpg');"
 				@click="toPublish()">
 				发布作品
 			</button>
