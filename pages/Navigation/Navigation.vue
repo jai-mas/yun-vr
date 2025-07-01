@@ -51,7 +51,7 @@
 		<view class="nav-item" style="left: 25px; top: 462px; width: 90px; height: 150px;"
 			@tap="navigateTo(navItems[4])">
 			<image class="nav-icon" :src="navItems[4].icon" style="left: 30px; top: 100px;"></image>
-			<view class="vertical-text-container" style="left: 35px; top: 35px;">
+			<view class="vertical-text-container" style="left: 37px; top: 25px;">
 				<text>特</text>
 				<text>色</text>
 				<text>物</text>
@@ -64,7 +64,7 @@
 		<view class="nav-item" style="left: 279px; top: 462px; width: 90px; height: 150px;"
 			@tap="navigateTo(navItems[6])">
 			<image class="nav-icon" :src="navItems[6].icon" style="left: 30px; top: 100px;"></image>
-			<view class="vertical-text-container" style="left: 35px; top: 35px;">
+			<view class="vertical-text-container" style="left: 37px; top: 24px;">
 				<text>公</text>
 				<text>益</text>
 				<text>教</text>
