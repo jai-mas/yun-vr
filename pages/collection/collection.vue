@@ -32,7 +32,7 @@
 		<view class="content-area">
 			<!-- 景点列表 -->
 			<view class="scenic-list">
-				<view class="scenic-item" v-for="(item, index) in scenicList" :key="index" @click="goToDetail(item.id)">
+				<view class="scenic-item" v-for="(item, index) in scenicList" :key="index" @click="goToDetail(item)">
 					<view class="item-content">
 						<image class="item-image" :src="item.image" mode="aspectFill"></image>
 						<text class="item-title">{{ item.title }}</text>
@@ -58,14 +58,9 @@
 				scenicList: [
 					{
 						id: 1,
-						title: '永恒奇茶',
+						title: '莓茶',
 						image: '/static/product/1.png'
 					},
-					{
-						id: 2,
-						title: '永恒黑山羊',
-						image: '/static/product/2.png'
-					}
 				],
 				indicatorLeft: '87.5%' // 默认指示器位置（物产标签）
 			};
@@ -131,22 +126,26 @@
 						this.scenicList = [
 							{
 								id: 1,
-								title: '永恒奇茶',
+								title: '莓茶',
 								image: '/static/product/1.png'
 							},
-							{
-								id: 2,
-								title: '永恒黑山羊',
-								image: '/static/product/2.png'
-							}
 						];
 						break;
 				}
 			},
-			goToDetail(id) {
-				uni.navigateTo({
-					url: `/pages/welfare/xiangqing?id=${id}`
-				});
+			goToDetail(item) {
+				// 根据不同标签跳转到不同页面
+				if (this.activeTab === 'property') {
+					// 物产数据跳转到products页面
+					uni.navigateTo({
+						url: `/pages/Products/products?name=${encodeURIComponent(item.title)}`
+					});
+				} else {
+					// 其他类型（包括公益教育）跳转到xiangqing页面
+					uni.navigateTo({
+						url: `/pages/welfare/xiangqing?id=${item.id}`
+					});
+				}
 			}
 		},
 		onLoad() {
