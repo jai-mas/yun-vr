@@ -14,8 +14,9 @@
 				class="banner-swiper" 
 				:indicator-dots="true" 
 				:autoplay="true" 
-				:interval="3000" 
-				:duration="500"
+				:interval="4000" 
+				:duration="800"
+				:circular="true"
 				indicator-color="rgba(255, 255, 255, 0.5)"
 				indicator-active-color="#ffffff"
 				@change="onSwiperChange"
@@ -96,40 +97,7 @@
 				statusBarHeight: 44, // 状态栏高度
 				listHeight: 0, // 列表高度
 				newMessage: '', // 新留言内容
-				messageList: [
-					{
-						content: '这里的风景真美！',
-						time: '2024-01-15 10:30'
-					},
-					{
-						content: '很喜欢这个地方，下次还要来',
-						time: '2024-01-15 09:45'
-					},
-					{
-						content: '和家人一起度过了美好的时光',
-						time: '2024-01-14 16:20'
-					},
-					{
-						content: '推荐大家都来看看',
-						time: '2024-01-14 14:15'
-					},
-					{
-						content: '空气清新，心情舒畅',
-						time: '2024-01-13 11:30'
-					},
-					{
-						content: '拍了很多美照！',
-						time: '2024-01-13 08:45'
-					},
-					{
-						content: '历史文化底蕴深厚',
-						time: '2024-01-12 15:20'
-					},
-					{
-						content: '服务很贴心，体验很棒',
-						time: '2024-01-12 13:10'
-					}
-				],
+				messageList: [], // 留言数据，改为空数组
 				bannerList: [], // 轮播图数据
 				messagePositions: [
 					// 第一排
@@ -145,12 +113,7 @@
 					// 第三排
 					{ left: '60rpx', top: '530rpx', transform: 'rotate(-6deg)' },
 					{ left: '270rpx', top: '550rpx', transform: 'rotate(4deg)' },
-					{ left: '520rpx', top: '520rpx', transform: 'rotate(-3deg)' },
-					
-					// 第四排
-					{ left: '30rpx', top: '780rpx', transform: 'rotate(5deg)' },
-					{ left: '330rpx', top: '800rpx', transform: 'rotate(-7deg)' },
-					{ left: '540rpx', top: '770rpx', transform: 'rotate(2deg)' }
+					{ left: '520rpx', top: '520rpx', transform: 'rotate(-3deg)' }
 				]
 			}
 		},
@@ -158,6 +121,7 @@
 			this.getSystemInfo();
 			this.calculateListHeight();
 			this.loadBannerData();
+			this.loadMessageData();
 			console.log('留言数据:', this.messageList);
 			console.log('留言数量:', this.messageList.length);
 			console.log('位置数据:', this.messagePositions);
@@ -201,15 +165,36 @@
 					return;
 				}
 				
+				// 检查留言长度
+				if (this.newMessage.trim().length > 30) {
+					uni.showToast({
+						title: '留言内容不能超过30个字符',
+						icon: 'none'
+					});
+					return;
+				}
+				
 				// 获取当前时间
 				const now = new Date();
-				const time = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+				const time = now.toLocaleString('zh-CN', {
+					year: 'numeric',
+					month: '2-digit',
+					day: '2-digit',
+					hour: '2-digit',
+					minute: '2-digit'
+				});
 				
 				// 添加新留言到列表顶部
 				const newMsg = {
+					id: Date.now(), // 使用时间戳作为临时ID
 					content: this.newMessage.trim(),
 					time: time
 				};
+				
+				// 如果已有9条留言，移除最后一条
+				if (this.messageList.length >= 9) {
+					this.messageList.pop();
+				}
 				
 				this.messageList.unshift(newMsg);
 				this.newMessage = '';
@@ -221,37 +206,118 @@
 			},
 			
 			// 加载轮播图数据
-			loadBannerData() {
-				// 使用示例图片创建轮播数据
-				this.bannerList = [
-					{
-						imageUrl: '/static/map/blueSky.png',
-						title: '美丽风景1',
-						description: '这里有最美丽的风景，欢迎大家来游览'
-					},
-					{
-						imageUrl: '/static/map/blueSky.png',
-						title: '美丽风景2',
-						description: '体验不一样的自然风光，感受大自然的魅力'
-					},
-					{
-						imageUrl: '/static/map/blueSky.png',
-						title: '美丽风景3',
-						description: '留下美好的回忆，分享快乐的时光'
+			async loadBannerData() {
+				try {
+					uni.showLoading({
+						title: '加载中...'
+					});
+					
+					const response = await uni.request({
+						url: 'http://team2.lizxx.com/api/wall/carousel',
+						method: 'GET',
+						header: {
+							'Content-Type': 'application/json'
+						}
+					});
+					
+					uni.hideLoading();
+					
+					if (response.data && response.data.code === 200 && response.data.data) {
+						// 将接口返回的图片URL转换为轮播图数据格式
+						this.bannerList = response.data.data.map((imageUrl, index) => ({
+							imageUrl: imageUrl,
+							title: `精彩瞬间 ${index + 1}`,
+							description: '分享美好时光，留下珍贵回忆'
+						}));
+						
+						console.log('轮播图数据加载成功:', this.bannerList);
+					} else {
+						throw new Error('数据格式错误');
 					}
-				];
-				
-				// TODO: 后续需要接入真实的API接口
-				// uni.request({
-				//     url: 'your-api-endpoint',
-				//     method: 'GET',
-				//     success: (res) => {
-				//         this.bannerList = res.data;
-				//     },
-				//     fail: (err) => {
-				//         console.error('获取轮播图数据失败', err);
-				//     }
-				// });
+				} catch (error) {
+					uni.hideLoading();
+					console.error('获取轮播图数据失败:', error);
+					
+					// 使用默认数据作为备用
+					this.bannerList = [
+						{
+							imageUrl: '/static/map/blueSky.png',
+							title: '美丽风景1',
+							description: '这里有最美丽的风景，欢迎大家来游览'
+						},
+						{
+							imageUrl: '/static/map/blueSky.png',
+							title: '美丽风景2',
+							description: '体验不一样的自然风光，感受大自然的魅力'
+						},
+						{
+							imageUrl: '/static/map/blueSky.png',
+							title: '美丽风景3',
+							description: '留下美好的回忆，分享快乐的时光'
+						}
+					];
+					
+					uni.showToast({
+						title: '轮播图加载失败，使用默认数据',
+						icon: 'none',
+						duration: 2000
+					});
+				}
+			},
+			
+			// 加载留言数据
+			async loadMessageData() {
+				try {
+					const response = await uni.request({
+						url: 'http://team2.lizxx.com/api/wall/message/list',
+						method: 'GET',
+						header: {
+							'Content-Type': 'application/json'
+						}
+					});
+					
+					if (response.data && response.data.code === 200 && response.data.data) {
+						// 过滤过长的消息，只保留长度适中的消息
+						const filteredMessages = response.data.data.filter(item => {
+							return item.msg && item.msg.length <= 30; // 过滤长度超过30字符的消息
+						});
+						
+						// 只取前9条消息（对应9个位置）
+						const limitedMessages = filteredMessages.slice(0, 9);
+						
+						// 转换为组件需要的数据格式
+						this.messageList = limitedMessages.map(item => ({
+							id: item.id,
+							content: item.msg,
+							time: new Date().toLocaleString('zh-CN', {
+								year: 'numeric',
+								month: '2-digit',
+								day: '2-digit',
+								hour: '2-digit',
+								minute: '2-digit'
+							})
+						}));
+						
+						console.log('留言数据加载成功:', this.messageList);
+					} else {
+						throw new Error('留言数据格式错误');
+					}
+				} catch (error) {
+					console.error('获取留言数据失败:', error);
+					
+					// 使用默认留言数据作为备用
+					this.messageList = [
+						{ content: '这里的风景真美！', time: '2024-01-15 10:30' },
+						{ content: '很喜欢这个地方', time: '2024-01-15 09:45' },
+						{ content: '和家人一起度过了美好时光', time: '2024-01-14 16:20' }
+					];
+					
+					uni.showToast({
+						title: '留言加载失败，使用默认数据',
+						icon: 'none',
+						duration: 2000
+					});
+				}
 			},
 			
 			// 轮播图切换事件
