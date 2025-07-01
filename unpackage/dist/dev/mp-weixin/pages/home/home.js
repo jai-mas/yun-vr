@@ -170,10 +170,17 @@ var _default = {
       isTransitioning: false
     };
   },
-  onLoad: function onLoad() {
-    // 当进入第二个页面时启动轮播
-    if (this.isSecondPage) {
-      this.startAutoPlay();
+  onLoad: function onLoad(options) {
+    var _this = this;
+    // 检查是否通过导航栏跳转，如果是则跳过引导页
+    if (options && options.skipGuide === 'true') {
+      this.isSecondPage = true;
+      this.$nextTick(function () {
+        _this.startAutoPlay();
+      });
+    } else {
+      // 默认显示引导页
+      this.isSecondPage = false;
     }
   },
   onUnload: function onUnload() {
@@ -184,11 +191,11 @@ var _default = {
   },
   methods: {
     goToSecondPage: function goToSecondPage() {
-      var _this = this;
+      var _this2 = this;
       this.isSecondPage = true;
       // 启动自动轮播
       this.$nextTick(function () {
-        _this.startAutoPlay();
+        _this2.startAutoPlay();
       });
     },
     // 跳转到留言页面
@@ -209,42 +216,42 @@ var _default = {
     },
     // 开始自动轮播
     startAutoPlay: function startAutoPlay() {
-      var _this2 = this;
+      var _this3 = this;
       this.autoPlayTimer = setInterval(function () {
-        if (!_this2.isTransitioning) {
-          _this2.nextImage();
+        if (!_this3.isTransitioning) {
+          _this3.nextImage();
         }
       }, 4000); // 4秒切换一次
     },
     // 切换到下一张图片
     nextImage: function nextImage() {
-      var _this3 = this;
+      var _this4 = this;
       if (this.isTransitioning) return;
       this.isTransitioning = true;
 
       // 显示遮罩
       this.showMaskAnimation(function () {
         // 切换到下一张
-        _this3.currentIndex = (_this3.currentIndex + 1) % _this3.carouselImages.length;
+        _this4.currentIndex = (_this4.currentIndex + 1) % _this4.carouselImages.length;
 
         // 延迟一段时间，让遮罩保持显示状态
         setTimeout(function () {
           // 隐藏遮罩
-          _this3.hideMaskAnimation(function () {
-            _this3.isTransitioning = false;
+          _this4.hideMaskAnimation(function () {
+            _this4.isTransitioning = false;
           });
         }, 800); // 遮罩显示时间
       });
     },
     // 显示遮罩动画
     showMaskAnimation: function showMaskAnimation(callback) {
-      var _this4 = this;
+      var _this5 = this;
       var opacity = 0;
       var step = 0.05;
       var interval = 50;
       var showInterval = setInterval(function () {
         opacity += step;
-        _this4.maskOpacity = opacity;
+        _this5.maskOpacity = opacity;
         if (opacity >= 1) {
           clearInterval(showInterval);
           if (callback) callback();
@@ -253,13 +260,13 @@ var _default = {
     },
     // 隐藏遮罩动画
     hideMaskAnimation: function hideMaskAnimation(callback) {
-      var _this5 = this;
+      var _this6 = this;
       var opacity = 1;
       var step = 0.05;
       var interval = 50;
       var hideInterval = setInterval(function () {
         opacity -= step;
-        _this5.maskOpacity = opacity;
+        _this6.maskOpacity = opacity;
         if (opacity <= 0) {
           clearInterval(hideInterval);
           if (callback) callback();

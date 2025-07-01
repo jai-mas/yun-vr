@@ -32,7 +32,7 @@
 			</button>
 		</view>
 		<p class="version">version</p>
-		<TabBar current="my" />
+		<TabBar current="mine" />
 	</view>
 </template>
 

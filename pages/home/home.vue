@@ -74,10 +74,16 @@
 				isTransitioning: false
 			}
 		},
-		onLoad() {
-			// 当进入第二个页面时启动轮播
-			if (this.isSecondPage) {
-				this.startAutoPlay();
+		onLoad(options) {
+			// 检查是否通过导航栏跳转，如果是则跳过引导页
+			if (options && options.skipGuide === 'true') {
+				this.isSecondPage = true;
+				this.$nextTick(() => {
+					this.startAutoPlay();
+				});
+			} else {
+				// 默认显示引导页
+				this.isSecondPage = false;
 			}
 		},
 		onUnload() {

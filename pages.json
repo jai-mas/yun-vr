@@ -124,8 +124,7 @@
 		{
 					"path" : "pages/CheckIn/CheckIn",
 					"style" :{
-						"navigationBarTitleText" : "",
-						"navigationStyle":"custom"
+						"navigationBarTitleText" : "集章打卡"
 					}
 		},
 		{

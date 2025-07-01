@@ -93,7 +93,7 @@
 		</view>
 
 		<!-- 悬浮球和底部导航栏 -->
-		<TabBar current="navigation" />
+		<TabBar current="Navigation" />
 	</view>
 </template>
 
@@ -120,43 +120,43 @@ export default {
 					title: '探索发现',
 					icon: '/static/icons/discover.png',
 					bg: '/static/navigation/nav-bg2.png',
-					url: ''
+					url: '/pages/tansuo/faxian'
 				},
 				{
 					title: '云上展馆',
 					icon: '/static/icons/cloud-museum.png',
 					bg: '/static/navigation/nav-bg3.png',
-					url: ''
+					url: '/pages/exhibition/exhibition'
 				},
 				{
 					title: '文创艺术',
 					icon: '/static/icons/art.png',
 					bg: '/static/navigation/nav-bg4.png',
-					url: ''
+					url: '/pages/MyCreation/MyCreation'
 				},
 				{
 					title: '特色物产',
 					icon: '/static/icons/product.png',
 					bg: '/static/navigation/nav-bg5.png',
-					url: ''
+					url: '/pages/Products/products'
 				},
 				{
 					title: '地图',
 					icon: '/static/icons/map.png',
 					bg: '/static/navigation/nav-bg6.png',
-					url: ''
+					url: '/pages/map/map'
 				},
 				{
 					title: '公益教育',
 					icon: '/static/icons/education.png',
 					bg: '/static/navigation/nav-bg7.png',
-					url: ''
+					url: '/pages/welfare/welfare-main'
 				},
 				{
 					title: '集章打卡',
 					icon: '/static/icons/stamp.png',
 					bg: '/static/navigation/nav-bg8.png',
-					url: ''
+					url: '/pages/CheckIn/CheckIn'
 				},
 				{
 					title: '线下预约',

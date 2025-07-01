@@ -77,7 +77,7 @@
     </scroll-view>
 	
     <!-- 底部导航栏 -->
-	<TabBar current="navigation"></TabBar>
+	<TabBar current="products"/>
   </view>
 </template>
 
@@ -162,8 +162,11 @@ export default {
       // 可以在这里添加自定义滚动逻辑
     },
     navigateToDetail() {
-      uni.navigateTo({
-        url: `/pages/product/detail?id=${this.currentIndex}`
+      // 显示当前产品详情，而不是跳转到不存在的页面
+      uni.showToast({
+        title: `${this.currentProduct.name}详情页开发中`,
+        icon: 'none',
+        duration: 2000
       })
     }
   }

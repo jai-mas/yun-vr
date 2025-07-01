@@ -9730,9 +9730,19 @@ var navigateTo = function navigateTo(url) {
       return "".concat(key, "=").concat(encodeURIComponent(val));
     }).join('&');
   }
-  uni.navigateTo({
-    url: url + query
-  });
+
+  // 检查页面栈深度，微信小程序最多同时打开10个页面
+  var pages = getCurrentPages();
+  // 当页面栈深度大于等于9时使用reLaunch代替navigateTo
+  if (pages.length >= 9) {
+    uni.reLaunch({
+      url: url + query
+    });
+  } else {
+    uni.navigateTo({
+      url: url + query
+    });
+  }
 };
 
 //返回上一页
@@ -9756,11 +9766,19 @@ var switchTab = function switchTab(url) {
     url: url
   });
 };
+
+// 关闭所有页面，打开到应用内的某个页面
+var reLaunch = function reLaunch(url) {
+  uni.reLaunch({
+    url: url
+  });
+};
 var _default = {
   navigateTo: navigateTo,
   navigateBack: navigateBack,
   redirectTo: redirectTo,
-  switchTab: switchTab
+  switchTab: switchTab,
+  reLaunch: reLaunch
 };
 exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))

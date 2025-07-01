@@ -66,7 +66,7 @@
 			</view>
           </swiper-item>
         </swiper>
-		<TabBar :current="'home'" @change="onTabChange" />
+		<TabBar current="home" />
       </view>
     </view>
 	
@@ -77,7 +77,7 @@
 import TabBar from '@/compents/TabBar.vue'
 import FloatBall from '@/compents/FloatBall.vue'
 export default {
-  name: 'TabBar',
+  name: 'Faxian',
   components: {
     TabBar,
     FloatBall
@@ -133,6 +133,10 @@ export default {
       uni.navigateTo({
         url: `/pages/tansuo/detail01?name=${item.name}`
       })
+    },
+    onTabChange(tabName) {
+      // 处理底部标签栏变化
+      console.log('Tab changed to:', tabName)
     }
   }
 }
@@ -155,6 +159,7 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: 12rpx;
+  padding-top: 80rpx;
   .title {
     font-size: 40rpx;
     font-weight: bold;

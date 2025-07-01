@@ -1,6 +1,5 @@
 {
-  "navigationBarTitleText": "",
-  "navigationStyle": "custom",
+  "navigationBarTitleText": "集章打卡",
   "usingComponents": {
     "tab-bar": "/compents/TabBar"
   }

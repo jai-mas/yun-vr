@@ -7,15 +7,6 @@
     <view class="content">
       <!-- 头部区域：标题 + 返回按钮 -->
       <view class="header">
-        <!-- 返回按钮单独一行 -->
-        <view class="top-row">
-          <image 
-            class="back-icon" 
-            src="/static/common/nav-left-icon.png" 
-            mode="widthFix" 
-            @click="goBack"
-          ></image>
-        </view>
         
         <!-- 标题和头像一行 -->
         <view class="bottom-row">
@@ -51,13 +42,14 @@
       </view>
 	  
     <!-- 底部导航栏 -->
-	<TabBar current="my" />
+	<TabBar current="CheckIn" />
 	  
     </view>
   </view>
 </template>
 
 <script>
+import router from '@/common/router.js'
 import { TabBar } from "../../compents/TabBar.vue"
 export default {
   name: 'CheckIn',
@@ -80,9 +72,6 @@ export default {
     }
   },
   methods: {
-    goBack() { 
-      uni.navigateBack();
-    },
     handleItemClick(item) { 
       console.log('点击已打卡项', item);
     },

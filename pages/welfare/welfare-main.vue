@@ -48,16 +48,17 @@
 		</view>
 		
 		<!-- 底部导航栏 -->
-		<TabBar current="navigation" />
+		<TabBar />
 	</view>
 </template>
 
 <script>
 	import TabBar from '@/compents/TabBar.vue'
-	
+	import FloatBall from '@/compents/FloatBall.vue'
 	export default {
-		components: {
-			TabBar
+	components: {
+		FloatBall,
+		TabBar
 		},
 		data() {
 			return {

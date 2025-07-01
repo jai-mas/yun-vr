@@ -6,9 +6,18 @@ const navigateTo = (url, params={}) => {
 			.join('&')
 	}
 	
-	uni.navigateTo({
-		url: url + query
-	})
+	// 检查页面栈深度，微信小程序最多同时打开10个页面
+	const pages = getCurrentPages()
+	// 当页面栈深度大于等于9时使用reLaunch代替navigateTo
+	if (pages.length >= 9) {
+		uni.reLaunch({
+			url: url + query
+		})
+	} else {
+		uni.navigateTo({
+			url: url + query
+		})
+	}
 }
 
 //返回上一页
@@ -29,9 +38,18 @@ const switchTab = (url) => {
 		url
 	})
 }
+
+// 关闭所有页面，打开到应用内的某个页面
+const reLaunch = (url) => {
+	uni.reLaunch({
+		url
+	})
+}
+
 export default {
 	navigateTo,
 	navigateBack,
 	redirectTo,
-	switchTab
+	switchTab,
+	reLaunch
 }

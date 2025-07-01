@@ -194,11 +194,10 @@ var _default = {
         text: '我的',
         icon: '/static/icons/my-active.jpg',
         activeIcon: '/static/icons/my-active.jpg',
-        url: '' // 暂时为空，待实现我的页面
+        url: '/pages/mine/mine'
       }]
     };
   },
-
   watch: {
     current: {
       handler: function handler(val) {
@@ -217,7 +216,14 @@ var _default = {
       } else if (this.currentTab !== item.name) {
         if (item.url) {
           this.currentTab = item.name;
-          _router.default.navigateTo(item.url);
+          // 如果是首页，添加跳过引导页的参数
+          if (item.name === 'home') {
+            _router.default.navigateTo(item.url, {
+              skipGuide: 'true'
+            });
+          } else {
+            _router.default.navigateTo(item.url);
+          }
           this.$emit('change', item.name);
         } else {
           uni.showToast({

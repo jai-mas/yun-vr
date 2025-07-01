@@ -152,7 +152,7 @@ var FloatBall = function FloatBall() {
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
-  name: 'TabBar',
+  name: 'Faxian',
   components: {
     TabBar: TabBar,
     FloatBall: FloatBall
@@ -204,6 +204,10 @@ var _default = {
       uni.navigateTo({
         url: "/pages/tansuo/detail01?name=".concat(item.name)
       });
+    },
+    onTabChange: function onTabChange(tabName) {
+      // 处理底部标签栏变化
+      console.log('Tab changed to:', tabName);
     }
   }
 };

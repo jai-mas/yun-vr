@@ -146,8 +146,14 @@ var TabBar = function TabBar() {
     return resolve(__webpack_require__(/*! @/compents/TabBar.vue */ 322));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
+var FloatBall = function FloatBall() {
+  Promise.all(/*! require.ensure | compents/FloatBall */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/FloatBall")]).then((function () {
+    return resolve(__webpack_require__(/*! @/compents/FloatBall.vue */ 315));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
   components: {
+    FloatBall: FloatBall,
     TabBar: TabBar
   },
   data: function data() {

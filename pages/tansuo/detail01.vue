@@ -23,7 +23,7 @@
         <u-icon :name="isFav ? 'star-fill' : 'star'" size="28" color="#fff"></u-icon>
       </view>
     </view>
-	<TabBar :current="'home'" @change="onTabChange" />
+	<TabBar current="detail01" @change="onTabChange" />
   </view>
 </template>
 
@@ -31,7 +31,7 @@
 import TabBar from '@/compents/TabBar.vue'
 import FloatBall from '@/compents/FloatBall.vue'
 export default {
-  name: 'TabBar',
+  name: 'Detail01',
   components: {
     TabBar,
     FloatBall
@@ -66,6 +66,10 @@ export default {
         title: this.isFav ? '已收藏' : '已取消收藏',
         icon: 'none'
       })
+    },
+    onTabChange(tabName) {
+      // 处理底部标签栏变化
+      console.log('Tab changed to:', tabName)
     }
   }
 }

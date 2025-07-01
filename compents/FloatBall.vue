@@ -31,31 +31,31 @@ export default {
           id: 'option1',
           text: '云上展馆',
           icon: '/static/navigation/cloud-museum.png',
-          url: ''
+          url: '/pages/exhibition/exhibition'
         },
         {
           id: 'option2',
           text: '探索发现',
           icon: '/static/navigation/discover.png',
-          url: ''
+          url: '/pages/tansuo/faxian'
         },
         {
           id: 'option3',
           text: '文创艺术',
           icon: '/static/navigation/art.png',
-          url: ''
+          url: '/pages/MyCreation/MyCreation'
         },
         {
           id: 'option4',
           text: '特色物产',
           icon: '/static/navigation/product.png',
-          url: ''
+          url: '/pages/Products/products'
         },
         {
           id: 'option5',
           text: '公益教育',
           icon: '/static/navigation/education.png',
-          url: ''
+          url: '/pages/welfare/welfare-main'
         },
         {
           id: 'option6',

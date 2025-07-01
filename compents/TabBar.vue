@@ -72,7 +72,7 @@ export default {
           text: '我的',
           icon: '/static/icons/my-active.jpg',
           activeIcon: '/static/icons/my-active.jpg',
-          url: '' // 暂时为空，待实现我的页面
+          url: '/pages/mine/mine'
         }
       ]
     }
@@ -95,7 +95,12 @@ export default {
       } else if (this.currentTab !== item.name) {
         if (item.url) {
           this.currentTab = item.name;
-          router.navigateTo(item.url);
+          // 如果是首页，添加跳过引导页的参数
+          if (item.name === 'home') {
+            router.navigateTo(item.url, { skipGuide: 'true' });
+          } else {
+            router.navigateTo(item.url);
+          }
           this.$emit('change', item.name);
         } else {
           uni.showToast({

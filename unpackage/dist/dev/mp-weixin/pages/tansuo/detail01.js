@@ -184,7 +184,7 @@ var FloatBall = function FloatBall() {
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
-  name: 'TabBar',
+  name: 'Detail01',
   components: {
     TabBar: TabBar,
     FloatBall: FloatBall
@@ -212,6 +212,10 @@ var _default = {
         title: this.isFav ? '已收藏' : '已取消收藏',
         icon: 'none'
       });
+    },
+    onTabChange: function onTabChange(tabName) {
+      // 处理底部标签栏变化
+      console.log('Tab changed to:', tabName);
     }
   }
 };

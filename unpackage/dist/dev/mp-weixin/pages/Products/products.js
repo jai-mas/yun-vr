@@ -222,8 +222,11 @@ var _default = {
       // 可以在这里添加自定义滚动逻辑
     },
     navigateToDetail: function navigateToDetail() {
-      uni.navigateTo({
-        url: "/pages/product/detail?id=".concat(this.currentIndex)
+      // 显示当前产品详情，而不是跳转到不存在的页面
+      uni.showToast({
+        title: "".concat(this.currentProduct.name, "\u8BE6\u60C5\u9875\u5F00\u53D1\u4E2D"),
+        icon: 'none',
+        duration: 2000
       });
     }
   }

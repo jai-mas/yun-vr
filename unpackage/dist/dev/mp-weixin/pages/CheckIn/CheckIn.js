@@ -137,10 +137,62 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _router = _interopRequireDefault(__webpack_require__(/*! @/common/router.js */ 33));
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var TabBar = function TabBar() {
   Promise.all(/*! require.ensure | compents/TabBar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("compents/TabBar")]).then((function () {
     return resolve(__webpack_require__(/*! ../../compents/TabBar.vue */ 322));
@@ -176,9 +228,6 @@ var _default = {
     };
   },
   methods: {
-    goBack: function goBack() {
-      uni.navigateBack();
-    },
     handleItemClick: function handleItemClick(item) {
       console.log('点击已打卡项', item);
     },
