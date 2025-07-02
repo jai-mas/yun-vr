@@ -1,0 +1,224 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* uni.scss */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.checkIn-container.data-v-4c68d93c {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* 徽章展示墙特殊样式*/
+  /* 已打卡列表 */
+  /* 未打卡列表 */
+  /* 徽章展示墙 */
+}
+.checkIn-container .background.data-v-4c68d93c {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  opacity: 0.65;
+  /* 70% 透明度 */
+}
+.checkIn-container .content.data-v-4c68d93c {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding-bottom: 35vh;
+  box-sizing: border-box;
+  min-height: 0;
+}
+.checkIn-container .header.data-v-4c68d93c {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  margin-bottom: -20rpx;
+}
+.checkIn-container .header .top-row.data-v-4c68d93c {
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+}
+.checkIn-container .header .top-row .back-icon.data-v-4c68d93c {
+  width: 45rpx;
+  height: 45rpx;
+  margin-left: 20rpx;
+}
+.checkIn-container .header .bottom-row.data-v-4c68d93c {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: -18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #959595;
+  margin-left: 20px;
+  margin-right: 40rpx;
+}
+.checkIn-container .header .bottom-row .title.data-v-4c68d93c {
+  font-size: 24px;
+  font-weight: bold;
+  color: #181818;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.checkIn-container .header .bottom-row .avatar.data-v-4c68d93c {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.checkIn-container .list-container.data-v-4c68d93c {
+  flex: 1;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.checkIn-container .list-container .section-title.data-v-4c68d93c {
+  display: block;
+  font-size: 17px;
+  color: #1a1a1a;
+  margin-bottom: 20rpx;
+  text-align: left;
+  margin-left: 15px;
+}
+.checkIn-container .list-container .items-wrapper.data-v-4c68d93c {
+  flex: 1;
+  background-color: white;
+  border: 0.4rpx solid #eaf4ee;
+  border-radius: 20rpx;
+  padding: 57.5rpx 30rpx;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  gap: 15rpx;
+  height: 260rpx;
+  min-height: 260rpx;
+  gap: 30rpx;
+  /* 增加元素之间的间距 */
+  /* 列表项通用样式 */
+}
+.checkIn-container .list-container .items-wrapper .check-item.data-v-4c68d93c {
+  width: 100%;
+  height: 165rpx;
+  background-color: white;
+  border-radius: 25rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  box-shadow: 2rpx 3rpx 8rpx #959595;
+}
+.checkIn-container .list-container .items-wrapper .check-item .item-img.data-v-4c68d93c {
+  width: 130rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+  margin-right: 20px;
+}
+.checkIn-container .list-container .items-wrapper .check-item .item-img2.data-v-4c68d93c {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: auto;
+  margin-right: 6px;
+}
+.checkIn-container .list-container .items-wrapper .check-item .item-info.data-v-4c68d93c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+.checkIn-container .list-container .items-wrapper .check-item .item-name.data-v-4c68d93c {
+  font-size: 26rpx;
+  color: #000000;
+  margin-left: -10rpx;
+}
+.checkIn-container .list-container .items-wrapper .check-item .item-des.data-v-4c68d93c {
+  font-size: 23rpx;
+  color: #8a8a8a;
+  margin-left: -10rpx;
+  margin-top: 15rpx;
+}
+.checkIn-container .list-container .items-wrapper .check-item .arrow-icon.data-v-4c68d93c {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: auto;
+  margin-right: -20rpx;
+}
+.checkIn-container .list-container.show-list .items-wrapper.data-v-4c68d93c {
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-direction: row;
+  height: 165rpx;
+  min-height: 165rpx;
+  padding: 30rpx;
+  /* 滚动条*/
+  scrollbar-width: none;
+  /* 徽章图片样式 */
+}
+.checkIn-container .list-container.show-list .items-wrapper.data-v-4c68d93c::-webkit-scrollbar {
+  display: none;
+}
+.checkIn-container .list-container.show-list .items-wrapper .show-item.data-v-4c68d93c {
+  display: flex;
+  gap: 20rpx;
+  width: auto;
+  height: 200rpx;
+  padding: 0;
+  box-shadow: none;
+  background-color: transparent;
+  border: none;
+}
+.checkIn-container .list-container.show-list .items-wrapper .showitem-img.data-v-4c68d93c {
+  width: 195rpx;
+  height: 195rpx;
+  margin-right: 0;
+  object-fit: cover;
+  border-radius: 10rpx;
+}
+.checkIn-container .checked-list.data-v-4c68d93c {
+  margin-top: -20rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.checkIn-container .unchecked-list.data-v-4c68d93c {
+  margin-top: -20rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.checkIn-container .show-list.data-v-4c68d93c {
+  margin-top: 10rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

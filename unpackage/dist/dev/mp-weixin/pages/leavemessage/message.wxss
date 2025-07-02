@@ -1,0 +1,189 @@
+
+page {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+}
+.message-container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #f5f5f5;
+}
+
+/* 全屏背景 */
+.full-bg {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+/* 标题区域 */
+.title-section {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	padding-bottom: 30rpx;
+	margin-top: -130rpx;
+}
+.title-image {
+	height: 220rpx;
+	max-width: 600rpx;
+}
+
+/* 轮播图区域 */
+.swiper-section {
+	position: relative;
+	z-index: 2;
+	margin: 0 30rpx;
+	margin-bottom: 10rpx; /* 减少下边距，让留言内容上移 */
+	margin-top: -60rpx;
+}
+.banner-swiper {
+	height: 400rpx;
+	border-radius: 20rpx;
+	overflow: hidden;
+}
+.swiper-item {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.banner-image {
+	width: 100%;
+	height: 100%;
+	border-radius: 20rpx;
+}
+.banner-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+	padding: 40rpx 30rpx 30rpx 30rpx;
+	border-radius: 0 0 20rpx 20rpx;
+}
+.banner-title {
+	display: block;
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 10rpx;
+	text-shadow: 1rpx 1rpx 2rpx rgba(0, 0, 0, 0.5);
+}
+.banner-desc {
+	display: block;
+	font-size: 26rpx;
+	color: #ffffff;
+	opacity: 0.9;
+	line-height: 1.4;
+	text-shadow: 1rpx 1rpx 2rpx rgba(0, 0, 0, 0.5);
+}
+
+/* 主要内容区域 */
+.main-content {
+	position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	z-index: 2;
+}
+
+/* 留言列表 */
+.message-list-container {
+	position: relative;
+	z-index: 2;
+	padding: 30rpx;
+	box-sizing: border-box;
+	overflow: visible;
+	min-height: 1200rpx;
+}
+.message-item {
+	position: absolute;
+	width: 200rpx;
+	height: 200rpx;
+	z-index: 3;
+}
+.note-bg {
+	position: absolute;
+	width: 130%;
+	height: 130%;
+	top: -10%;
+	left: -10%;
+	z-index: 1;
+}
+.note-content {
+	position: relative;
+	z-index: 2;
+	padding: 40rpx 30rpx;
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.note-text {
+	font-size: 28rpx;
+	color: #333;
+	line-height: 1.4;
+	word-break: break-all;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	font-weight: 500;
+}
+
+/* 发送留言区域 - 固定在底部 */
+.send-area-fixed {
+	position: fixed;
+	bottom: 160rpx; /* 留言发送区域向上移动 */
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background: transparent;
+	padding: 30rpx;
+}
+.input-container {
+	display: flex;
+	align-items: center;
+	gap: 20rpx;
+}
+.input-wrapper {
+	flex: 1;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 50rpx;
+	padding: 0 30rpx;
+	-webkit-backdrop-filter: blur(10rpx);
+	        backdrop-filter: blur(10rpx);
+}
+.message-input {
+	width: 100%;
+	height: 80rpx;
+	font-size: 28rpx;
+	color: #333;
+	background: transparent;
+	border: none;
+}
+.send-btn {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	border-radius: 50rpx;
+	padding: 0 40rpx;
+	height: 80rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.send-btn-text {
+	font-size: 28rpx;
+	color: #ffffff;
+	font-weight: bold;
+}
+

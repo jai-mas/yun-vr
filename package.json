@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "qqmap-wx-jssdk": "^1.0.0",
+    "swiper": "^11.1.11",
+    "uni-read-pages": "^1.0.5",
+    "uni-simple-router": "^2.0.8-beta.4"
+  },
+  "name": "yunvr",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {
+    "sass": "^1.89.2",
+    "sass-loader": "^16.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://codeup.aliyun.com/62e8dc1281ddd27ad9128e73/virtualtravel/xnlv-weapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

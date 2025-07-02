@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "留言板",
+  "usingComponents": {
+    "tab-bar": "/compents/TabBar"
+  }
+}
