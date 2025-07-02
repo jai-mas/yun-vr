@@ -1,7 +1,7 @@
 <template>
 	<view class="welfare-container">
 		<!-- 背景图 -->
-		<image class="bg-image" src="/static/welfare/ditu.png" mode="aspectFill"></image>
+		<image class="bg-image" src="http://team-img.lizxx.com/team2/welfare/ditu.png" mode="aspectFill"></image>
 		
 		<!-- 标题区域 -->
 		<view class="title-area">
@@ -20,7 +20,7 @@
 					<text class="card-desc">长沙老牌三下乡\n全方新媒文化基站</text>
 				</view>
 				<view class="card-right">
-					<image class="card-image" src="/static/welfare/mk01.png" mode="aspectFit"></image>
+					<image class="card-image" src="http://team-img.lizxx.com/team2/welfare/mk01.png" mode="aspectFit"></image>
 				</view>
 			</view>
 			
@@ -31,7 +31,7 @@
 					<text class="card-desc">进一步动员到位青年学生\n在社会实践中受锻炼、长才干与\n思想中受教育，培养实践\n作业素养</text>
 				</view>
 				<view class="card-right">
-					<image class="card-image" src="/static/welfare/mk02.png" mode="aspectFit"></image>
+					<image class="card-image" src="http://team-img.lizxx.com/team2/welfare/mk02.png" mode="aspectFit"></image>
 				</view>
 			</view>
 			
@@ -42,7 +42,7 @@
 					<text class="card-desc">青春远征\n汗滴禾下土沃壤\n筑梦学校</text>
 				</view>
 				<view class="card-right">
-					<image class="card-image" src="/static/welfare/mk03.png" mode="aspectFit"></image>
+					<image class="card-image" src="http://team-img.lizxx.com/team2/welfare/mk03.png" mode="aspectFit"></image>
 				</view>
 			</view>
 		</view>

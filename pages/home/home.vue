@@ -2,12 +2,11 @@
 	<view class="home-container">
 		<!-- 起始页面 -->
 		<view v-if="!isSecondPage" class="start-page" @click="goToSecondPage">
-			<image class="bg-image" src="/static/home/beijing.png" mode="aspectFill"></image>
+			<image class="bg-image" src="http://team-img.lizxx.com/team2/home/beijing.png" mode="aspectFill"></image>
 		</view>
-		
 		<!-- 第二个页面 -->
 		<view v-else class="second-page">
-			<image class="bg-image" src="/static/home/beijing1.jpg" mode="aspectFill"></image>
+			<image class="bg-image" src="http://team-img.lizxx.com/team2/home/beijing1.jpg" mode="aspectFill"></image>
 			
 			<!-- 轮播图包裹框 -->
 			<view class="carousel-wrapper" @click="goToMap">
@@ -28,7 +27,7 @@
 						<!-- 过渡遮罩层 -->
 						<image 
 							class="carousel-mask" 
-							src="/static/home/home-windows-mask.png" 
+							src="http://team-img.lizxx.com/team2/home/home-windows-mask.png" 
 							mode="aspectFill"
 							:style="{opacity: maskOpacity}"
 						></image>
@@ -40,7 +39,7 @@
 			<view class="message-icon" @click="goToMessage">
 				<image 
 					class="message-image" 
-					src="/static/leavemessage/message.png" 
+					src="http://team-img.lizxx.com/team2/leavemessage/message.png" 
 					mode="aspectFit"
 				></image>
 			</view>
@@ -62,11 +61,11 @@
 			return {
 				isSecondPage: false,
 				carouselImages: [
-					{ src: '/static/home/home-windows-image-1.png' },
-					{ src: '/static/home/home-windows-image-2.png' },
-					{ src: '/static/home/home-windows-image-3.png' },
-					{ src: '/static/home/home-windows-image-4.png' },
-					{ src: '/static/home/home-windows-image-5.png' }
+					{ src: 'http://team-img.lizxx.com/team2/home/home-windows-image-1.png' },
+					{ src: 'http://team-img.lizxx.com/team2/home/home-windows-image-2.png' },
+					{ src: 'http://team-img.lizxx.com/team2/home/home-windows-image-3.png' },
+					{ src: 'http://team-img.lizxx.com/team2/home/home-windows-image-4.png' },
+					{ src: 'http://team-img.lizxx.com/team2/home/home-windows-image-5.png' }
 				],
 				currentIndex: 0,
 				maskOpacity: 0,

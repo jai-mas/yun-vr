@@ -28,37 +28,37 @@ export default {
         {
           id: 'option1',
           text: '云上展馆',
-          icon: '/static/navigation/1.png',
+          icon: 'http://team-img.lizxx.com/team2/navigation/1.png',
           url: '/pages/exhibition/exhibition'
         },
         {
           id: 'option2',
           text: '探索发现',
-          icon: '/static/navigation/2.png',
+          icon: 'http://team-img.lizxx.com/team2/navigation/2.png',
           url: '/pages/tansuo/faxian'
         },
         {
           id: 'option3',
           text: '文创艺术',
-          icon: '/static/navigation/3.png',
+          icon: 'http://team-img.lizxx.com/team2/navigation/3.png',
           url: '/pages/MyCreation/MyCreation'
         },
         {
           id: 'option4',
           text: '特色物产',
-          icon: '/static/navigation/4.png',
+          icon: 'http://team-img.lizxx.com/team2/navigation/4.png',
           url: '/pages/Products/products'
         },
         {
           id: 'option5',
           text: '公益教育',
-          icon: '/static/navigation/5.png',
+          icon: 'http://team-img.lizxx.com/team2/navigation/5.png',
           url: '/pages/welfare/welfare-main'
         },
         {
           id: 'option6',
           text: '浏览云古镇',
-          icon: '/static/navigation/6.png',
+          icon: 'http://team-img.lizxx.com/team2/navigation/6.png',
           url: ''
         }
       ]

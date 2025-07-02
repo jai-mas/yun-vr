@@ -1,5 +1,5 @@
 <template>
-	<view class="mine-page" style="background-image: url('/static/mine/mine-bg.jpg');">
+	<view class="mine-page" style="background-image: url('http://team-img.lizxx.com/team2/mine/mine-bg.jpg');">
 		<view class="mine-top">
 			<view class="top-title">个人主页</view>
 			<view class="mine-user">
@@ -14,25 +14,25 @@
 			</view>
 		</view>
 		<view class="mine-list">
-			<button class="mine-button" style="background-image: url('/static/mine/bg-1.jpg');"
+			<button class="mine-button" style="background-image: url('http://team-img.lizxx.com/team2/mine/bg-1.jpg');"
 				@click="toClock()">
 				去打卡
 			</button>
-			<button class="mine-button" style="background-image: url('/static/mine/bg-2.jpg');"
+			<button class="mine-button" style="background-image: url('http://team-img.lizxx.com/team2/mine/bg-2.jpg');"
 				@click="toLike()">
 				我的点赞
 			</button>
-			<button class="mine-button" style="background-image: url('/static/mine/bg-3.jpg');"
+			<button class="mine-button" style="background-image: url('http://team-img.lizxx.com/team2/mine/bg-3.jpg');"
 				@click="toCC()">
 				我的文创
 			</button>
-			<button class="mine-button" style="background-image: url('/static/mine/bg-4.jpg');"
+			<button class="mine-button" style="background-image: url('http://team-img.lizxx.com/team2/mine/bg-4.jpg');"
 				@click="toPublish()">
 				发布作品
 			</button>
 		</view>
 		<p class="version">version</p>
-		<TabBar current="mine" />
+		<TabBar current="my" />
 	</view>
 </template>
 
@@ -48,7 +48,7 @@ export default{
 	},
 	data() {
 		return {
-			avatar: '/static/mine/Group 889.png',
+			avatar: 'http://team-img.lizxx.com/team2/mine/Group 889.png',
 			username: 'yunyou',
 			recordsum: 4,
 		};
@@ -80,7 +80,7 @@ export default{
 			})
 		},
 		toClock(){//跳转至打卡
-			uni.redirectTo({
+			uni.navigateTo({
 				url: '/pages/CheckIn/CheckIn',
 				fail: (res) => {
 					console.log(res)
@@ -88,7 +88,7 @@ export default{
 			})
 		},
 		toLike(){//跳转到我的收藏
-			uni.redirectTo({
+			uni.navigateTo({
 				url: '/pages/collection/collection',
 				fail: (res) => {
 					console.log(res)
@@ -96,7 +96,7 @@ export default{
 			})
 		},
 		toCC(){//跳转至我的文创
-			uni.redirectTo({
+			uni.navigateTo({
 				url: '/pages/MyCreation/MyCreation',
 				fail: (res) => {
 					console.log(res)
@@ -104,7 +104,7 @@ export default{
 			})
 		},
 		toPublish(){//跳转至发布
-			uni.redirectTo({
+			uni.navigateTo({
 				url: '/pages/mine/publish/publish',
 				fail: (res) => {
 					console.log(res)

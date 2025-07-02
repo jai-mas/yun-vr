@@ -39,16 +39,16 @@ export default {
   data() {
     return {
       storyName: '靖港古镇"江河码头"智慧',
-      coverImg: '/static/tansuo/6.webp',
+      coverImg: 'http://team-img.lizxx.com/team2/tansuo/6.webp',
       address: '靖港古镇',
       desc: '江河之秋的古老码头，智慧之光悄然闪烁，是历史的低语，还是未来的预兆？每一步，都伴随着疑问的回响。这里到底有多少秘密？',
       pics: [
-		'/static/tansuo/1.webp',
-		'/static/tansuo/2.webp',
-		'/static/tansuo/3.webp',
-		'/static/tansuo/4.webp',
-		'/static/tansuo/5.webp',
-		'/static/tansuo/6.webp'
+		'http://team-img.lizxx.com/team2/tansuo/1.webp',
+		'http://team-img.lizxx.com/team2/tansuo/2.webp',
+		'http://team-img.lizxx.com/team2/tansuo/3.webp',
+		'http://team-img.lizxx.com/team2/tansuo/4.webp',
+		'http://team-img.lizxx.com/team2/tansuo/5.webp',
+		'http://team-img.lizxx.com/team2/tansuo/6.webp'
       ],
       isFav: false
     }

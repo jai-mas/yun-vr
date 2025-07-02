@@ -1,13 +1,13 @@
 <template>
 	<view class="welfare-container">
 		<!-- 背景图 -->
-		<image class="bg-image" src="/static/welfare/ditu.png" mode="aspectFill"></image>
+		<image class="bg-image" src="http://team-img.lizxx.com/team2/welfare/ditu.png" mode="aspectFill"></image>
 		
 		<!-- 标题区域 -->
 		<view class="title-area">
 			<!-- 返回按钮 -->
 			<view class="back-btn" @click="goBack">
-				<image class="back-icon" src="/static/welfare/return.png" mode="aspectFit"></image>
+				<image class="back-icon" src="http://team-img.lizxx.com/team2/welfare/return.png" mode="aspectFit"></image>
 			</view>
 			
 			<text class="main-title">三下乡 报名</text>
@@ -21,7 +21,7 @@
 			<view class="content-area">
 				<view class="content-card" @click="navigateTo('/pages/welfare/baoming')">
 					<view class="card-left">
-						<image class="card-image" src="/static/welfare/mk02.png" mode="aspectFit"></image>
+						<image class="card-image" src="http://team-img.lizxx.com/team2/welfare/mk02.png" mode="aspectFit"></image>
 					</view>
 					<view class="card-right">
 						<text class="card-title">长沙学院三下乡——益开法治下乡活动报名通知</text>

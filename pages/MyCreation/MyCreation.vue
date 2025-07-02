@@ -1,11 +1,11 @@
 <template>
 	<view class="creation-container">
 		<!-- 背景图 -->
-		<image class="bg-image" src="/static/navigation/bg.jpg" mode="aspectFill"></image>
-		<image class="back-icon" src="/static/map/arrow.png" @click="goBack" mode=""></image>
+		<image class="bg-image" src="http://team-img.lizxx.com/team2/navigation/bg.jpg" mode="aspectFill"></image>
+		<image class="back-icon" src="http://team-img.lizxx.com/team2/map/arrow.png" @click="goBack" mode=""></image>
 
 		<!-- 小背景图，创建景深效果 -->
-		<image class="small-bg-image" src="/static/navigation/mc-bg.png" mode="aspectFill"></image>
+		<image class="small-bg-image" src="http://team-img.lizxx.com/team2/navigation/mc-bg.png" mode="aspectFill"></image>
 
 		<view class="content-wrapper">
 			<!-- 页面标题 -->

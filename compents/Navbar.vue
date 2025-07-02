@@ -4,7 +4,7 @@
 			@leftClick="handlerLeft" 
 			fixed="true" placeholder="true">
 			<view slot="left">
-				<image src="/static/common/nav-left-icon.png"></image>
+				<image src="http://team-img.lizxx.com/team2/common/nav-left-icon.png"></image>
 			</view>		
 		</u-navbar>
 	</view>

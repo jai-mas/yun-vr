@@ -4,7 +4,7 @@
     <view class="custom-navbar">
       <view class="navbar-content">
         <view class="navbar-left" @click="goBack">
-          <image class="back-icon" src="/static/map/arrow.png" mode="aspectFit"></image>
+          <image class="back-icon" src="http://team-img.lizxx.com/team2/map/arrow.png" mode="aspectFit"></image>
         </view>
         <view class="search-container">
           <input 
@@ -16,7 +16,7 @@
           />
           <image 
             class="search-icon" 
-            src="/static/map/search.png" 
+            src="http://team-img.lizxx.com/team2/map/search.png" 
             mode="aspectFit"
             @click="onSearch"
           ></image>
@@ -34,7 +34,7 @@
           :key="index"
           @click="selectHotSpot(spot)"
         >
-          <image class="spot-icon" src="/static/map/location_marker.png"></image>
+          <image class="spot-icon" src="http://team-img.lizxx.com/team2/map/location_marker.png"></image>
           <text class="spot-name">{{ spot.name }}</text>
         </view>
       </scroll-view>
@@ -78,13 +78,13 @@
         <view class="media-container">
           <image 
             class="scenic-image" 
-            src="/static/map/test.jpeg" 
+            src="http://team-img.lizxx.com/team2/map/test.jpeg" 
             mode="aspectFill"
           ></image>
           <!-- 可选：添加图片标识 -->
           <view class="image-overlay">
             <view class="image-indicator">
-              <text class="indicator-text">📷</text>
+              <text class="indicator-text"></text>
             </view>
           </view>
         </view>
@@ -130,8 +130,8 @@ export default {
           name: '岳麓书院',
           latitude: 28.1825,
           longitude: 112.9344,
-          image: '/static/images/yuelu-academy.jpg',
-          localImage: '/static/images/yuelu-academy-local.jpg', // 新增本地图片路径
+          image: 'http://team-img.lizxx.com/team2/images/yuelu-academy.jpg',
+          localImage: 'http://team-img.lizxx.com/team2/images/yuelu-academy-local.jpg', // 新增本地图片路径
           hasVideo: false, // 改为false，不再显示视频相关元素
           description: '岳麓书院是中国历史上赫赫闻名的四大书院之一，坐落于中国历史文化名城湖南长沙湘江西岸的岳麓山下。北宋开宝九年（公元976年），潭州太守朱洞在僧人办学的基础上由官府捐资兴建，正式创立岳麓书院。作为世界上最古老的学府之一，历经千年而弦歌不绝，学脉延绵。其代表传统的书院建筑至今被完整保存，每一组院落、每一块石碑、每一枚砖瓦、每一支风荷，都闪烁着时光淬炼的人文精神，向世人诉说着千年学府的沧桑与辉煌。'
         },
@@ -139,8 +139,8 @@ export default {
           name: '中田村',
           latitude: 28.1865,
           longitude: 112.9624,
-          image: '/static/images/juzizhou.jpg',
-          localImage: '/static/images/juzizhou-local.jpg',
+          image: 'http://team-img.lizxx.com/team2/images/juzizhou.jpg',
+          localImage: 'http://team-img.lizxx.com/team2/images/juzizhou-local.jpg',
           hasVideo: false,
           description: '橘子洲头是湘江中的一个冲击沙洲，四面环水，绵延数十里，是国家重点风景名胜区。橘子洲头景区内有毛泽东青年艺术雕塑、问天台等景点。这里是毛泽东青年时代经常游览的地方，也是他写下《沁园春·长沙》的地方。'
         },
@@ -148,8 +148,8 @@ export default {
           name: '书堂山',
           latitude: 28.2386,
           longitude: 113.0557,
-          image: '/static/images/world-window.jpg',
-          localImage: '/static/images/world-window-local.jpg',
+          image: 'http://team-img.lizxx.com/team2/images/world-window.jpg',
+          localImage: 'http://team-img.lizxx.com/team2/images/world-window-local.jpg',
           hasVideo: false,
           description: '长沙世界之窗是一个融世界各国建筑奇观、五洲风情歌舞表演、大型器械游乐、先锋时尚活动、影视拍摄基地于一体的综合性大型主题公园。园内汇集了世界各地的著名建筑和景观的微缩版本。'
         }
@@ -198,7 +198,7 @@ export default {
           id: item.scenicId,
           latitude: Number(item.latitude),
           longitude: Number(item.longitude),
-          iconPath: item.logoUrl || '/static/common/location.png',
+          iconPath: item.logoUrl || 'http://team-img.lizxx.com/team2/common/location.png',
           width: 45,
           height: 45,
           callout: {
@@ -264,8 +264,8 @@ export default {
         } else {
           this.currentSpot = {
             name: marker.customData.scenicName,
-            image: '/static/images/default-scenic.jpg',
-            localImage: '/static/images/default-scenic-local.jpg',
+            image: 'http://team-img.lizxx.com/team2/images/default-scenic.jpg',
+            localImage: 'http://team-img.lizxx.com/team2/images/default-scenic-local.jpg',
             hasVideo: false,
             description: marker.customData.description || '暂无景点描述信息'
           };
@@ -296,7 +296,7 @@ export default {
           id: 1,
           latitude: 28.1825,
           longitude: 112.9344,
-          iconPath: '/static/map/test.jpeg',
+          iconPath: 'http://team-img.lizxx.com/team2/map/test.jpeg',
           width: 45,
           height: 45,
           callout: {
@@ -319,7 +319,7 @@ export default {
           id: 2,
           latitude: 28.1865,
           longitude: 112.9624,
-          iconPath: '/static/common/location.png',
+          iconPath: 'http://team-img.lizxx.com/team2/common/location.png',
           width: 45,
           height: 45,
           callout: {
@@ -342,7 +342,7 @@ export default {
           id: 3,
           latitude: 28.2386,
           longitude: 113.0557,
-          iconPath: '/static/common/location.png',
+          iconPath: 'http://team-img.lizxx.com/team2/common/location.png',
           width: 45,
           height: 45,
           callout: {

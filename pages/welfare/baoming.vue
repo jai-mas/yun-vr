@@ -1,13 +1,13 @@
 <template>
 	<view class="baoming-container">
 		<!-- 背景图 -->
-		<image class="bg-image" src="/static/welfare/ditu.png" mode="aspectFill"></image>
+		<image class="bg-image" src="http://team-img.lizxx.com/team2/welfare/ditu.png" mode="aspectFill"></image>
 		
 		<!-- 标题区域 -->
 		<view class="title-area">
 			<!-- 返回按钮 -->
 			<view class="back-btn" @click="goBack">
-				<image class="back-icon" src="/static/welfare/return.png" mode="aspectFit"></image>
+				<image class="back-icon" src="http://team-img.lizxx.com/team2/welfare/return.png" mode="aspectFit"></image>
 			</view>
 			
 			<text class="main-title">三下乡 报名</text>

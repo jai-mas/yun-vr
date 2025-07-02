@@ -1,11 +1,11 @@
 <template>
 	<view class="collection-container">
 		<!-- 背景图 -->
-		<image class="bg-image" src="/static/welfare/ditu.png" mode="aspectFill"></image>
+		<image class="bg-image" src="http://team-img.lizxx.com/team2/welfare/ditu.png" mode="aspectFill"></image>
 		
 		<!-- 顶部返回按钮 -->
 		<view class="back-btn" @click="goBack">
-			<image class="back-icon" src="/static/welfare/return.png" mode="aspectFit"></image>
+			<image class="back-icon" src="http://team-img.lizxx.com/team2/welfare/return.png" mode="aspectFit"></image>
 		</view>
 		
 		<!-- 导航标签栏 -->
@@ -59,7 +59,7 @@
 					{
 						id: 1,
 						title: '莓茶',
-						image: '/static/product/1.png'
+						image: 'http://team-img.lizxx.com/team2/product/1.png'
 					},
 				],
 				indicatorLeft: '87.5%' // 默认指示器位置（物产标签）
@@ -105,12 +105,12 @@
 							{
 								id: 101,
 								title: '长沙学院三下乡——乡村振兴志愿服务活动',
-						        image: '/static/welfare/hd101.jpg',
+						        image: 'http://team-img.lizxx.com/team2/welfare/hd101.jpg',
 							},
 							{
 								id: 102,
 								title: '长沙学院三下乡——"童心圆梦"支教活动',
-								image: '/static/welfare/hd102.jpg',
+								image: 'http://team-img.lizxx.com/team2/welfare/hd102.jpg',
 							},
 							
 							
@@ -127,7 +127,7 @@
 							{
 								id: 1,
 								title: '莓茶',
-								image: '/static/product/1.png'
+								image: 'http://team-img.lizxx.com/team2/product/1.png'
 							},
 						];
 						break;

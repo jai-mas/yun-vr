@@ -1,7 +1,7 @@
 <template>
 	<view class="loading-container">
 		<view>
-			<image src="/static/loading.gif"></image>
+			<image src="http://team-img.lizxx.com/team2/loading.gif"></image>
 			<view class="loading-text">内容努力加载中...</view>
 		</view>
 	</view>

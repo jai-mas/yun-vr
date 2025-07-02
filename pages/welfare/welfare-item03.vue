@@ -1,13 +1,13 @@
 <template>
 	<view class="welfare-container">
 		<!-- 背景图 -->
-		<image class="bg-image" src="/static/welfare/ditu.png" mode="aspectFill"></image>
+		<image class="bg-image" src="http://team-img.lizxx.com/team2/welfare/ditu.png" mode="aspectFill"></image>
 		
 		<!-- 标题区域 -->
 		<view class="title-area">
 			<!-- 返回按钮 -->
 			<view class="back-btn" @click="goBack">
-				<image class="back-icon" src="/static/welfare/return.png" mode="aspectFit"></image>
+				<image class="back-icon" src="http://team-img.lizxx.com/team2/welfare/return.png" mode="aspectFit"></image>
 			</view>
 			
 			<text class="main-title">三下乡 资讯</text>
@@ -53,42 +53,42 @@
 					{
 						id: 301,
 						title: '长沙学院文化宣传团公安县文化交流纪实',
-						image: '/static/welfare/zx301.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/zx301.jpg',
 						date: '2024-06-11',
 						views: '765'
 					},
 					{
 						id: 302,
 						title: '长沙学院法学院开展法治文化进乡村系列讲座',
-						image: '/static/welfare/zx302.png',
+						image: 'http://team-img.lizxx.com/team2/welfare/zx302.png',
 						date: '2024-06-11',
 						views: '765'
 					},
 					{
 						id: 303,
 						title: '科技助农 | 长沙学院在宁乡县开展农业技术培训',
-						image: '/static/welfare/zx303.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/zx303.jpg',
 						date: '2024-06-15',
 						views: '532'
 					},
 					{
 						id: 304,
 						title: '教育资源下沉 | 长沙学院师生走进汨罗市山区',
-						image: '/static/welfare/zx304.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/zx304.jpg',
 						date: '2024-06-20',
 						views: '621'
 					},
 					{
 						id: 305,
 						title: '健康服务进乡村 | 长沙学院医学院岳阳义诊纪实',
-						image: '/static/welfare/zx305.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/zx305.jpg',
 						date: '2024-06-25',
 						views: '487'
 					},
 					{
 						id: 306,
 						title: '绿色家园共建设 | 长沙学院环保宣讲走进浏阳',
-						image: '/static/welfare/zx306.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/zx306.jpg',
 						date: '2024-06-30',
 						views: '398'
 					}

@@ -89,32 +89,32 @@ export default {
       historyList: [
         {
           name: '靖港古镇"江河码头"智慧',
-          img: '/static/tansuo/6.webp',
+          img: 'http://team-img.lizxx.com/team2/tansuo/6.webp',
           desc: '江河之秋的古老码头，智慧之光悄然闪烁，是历史的低语，还是未来的预兆？每一步，都伴随着疑问的回响。这里到底有多少秘密？'
         },
 		{
           name: '靖港古镇"江河码头"智慧',
-          img: '/static/tansuo/8.webp',
-          desc: '玛卡巴卡'
+          img: 'http://team-img.lizxx.com/team2/tansuo/8.webp',
+          desc: ''
         },
 		{
           name: '靖港古镇"江河码头"智慧',
-          img: '/static/tansuo/9.webp',
-          desc: '阿西吧'
+          img: 'http://team-img.lizxx.com/team2/tansuo/9.webp',
+          desc: ''
         },
         // 可继续添加更多历史故事
       ],
       funList: [
         {
-          img: '/static/tansuo/4.webp',
+          img: 'http://team-img.lizxx.com/team2/tansuo/4.webp',
           label: '海绵宝宝'
         },
         {
-          img: '/static/tansuo/3.webp',
+          img: 'http://team-img.lizxx.com/team2/tansuo/3.webp',
           label: '派大星'
         },
 		{
-          img: '/static/tansuo/5.webp',
+          img: 'http://team-img.lizxx.com/team2/tansuo/5.webp',
           label: '章鱼哥'
         }
         // 可继续添加更多趣闻趣事
@@ -146,7 +146,7 @@ export default {
 .faxian-bg {
   min-height: 100vh;
   width: 100vw;
-  background: url('/static/tansuo/beijing.jpg') no-repeat center center;
+  background: url('http://team-img.lizxx.com/team2/tansuo/beijing.jpg') no-repeat center center;
   background-size: cover;
 }
 .explore-view {

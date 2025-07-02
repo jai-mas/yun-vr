@@ -1,13 +1,13 @@
 <template>
 	<view class="welfare-container">
 		<!-- 背景图 -->
-		<image class="bg-image" src="/static/welfare/ditu.png" mode="aspectFill"></image>
+		<image class="bg-image" src="http://team-img.lizxx.com/team2/welfare/ditu.png" mode="aspectFill"></image>
 		
 		<!-- 标题区域 -->
 		<view class="title-area">
 			<!-- 返回按钮 -->
 			<view class="back-btn" @click="goBack">
-				<image class="back-icon" src="/static/welfare/return.png" mode="aspectFit"></image>
+				<image class="back-icon" src="http://team-img.lizxx.com/team2/welfare/return.png" mode="aspectFit"></image>
 			</view>
 			
 			<text class="main-title">三下乡 活动</text>
@@ -54,42 +54,42 @@
 					{
 						id: 101,
 						title: '长沙学院三下乡——乡村振兴志愿服务活动',
-						image: '/static/welfare/hd101.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/hd101.jpg',
 						date: '2024-06-15',
 						views: '892'
 					},
 					{
 						id: 102,
 						title: '长沙学院三下乡——"童心圆梦"支教活动',
-						image: '/static/welfare/hd102.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/hd102.jpg',
 						date: '2024-06-18',
 						views: '756'
 					},
 					{
 						id: 103,
 						title: '长沙学院三下乡——农村电商帮扶计划',
-						image: '/static/welfare/hd103.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/hd103.jpg',
 						date: '2024-06-22',
 						views: '634'
 					},
 					{
 						id: 104,
 						title: '长沙学院三下乡——"健康乡村"医疗服务行动',
-						image: '/static/welfare/hd104.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/hd104.jpg',
 						date: '2024-06-25',
 						views: '578'
 					},
 					{
 						id: 105,
 						title: '长沙学院三下乡——乡村文化艺术节',
-						image: '/static/welfare/hd105.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/hd105.jpg',
 						date: '2024-06-28',
 						views: '721'
 					},
 					{
 						id: 106,
 						title: '长沙学院三下乡——"绿色家园"环保行动',
-						image: '/static/welfare/hd106.jpg',
+						image: 'http://team-img.lizxx.com/team2/welfare/hd106.jpg',
 						date: '2024-06-30',
 						views: '543'
 					}

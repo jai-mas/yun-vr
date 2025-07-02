@@ -1,5 +1,11 @@
 <template>
   <view class="museum-container">
+	<image class="bg-image" src="http://team-img.lizxx.com/team2/navigation/bg.jpg" mode="aspectFill"></image>
+
+	<view class="header-bar">
+		<image src="http://team-img.lizxx.com/team2/map/arrow.png" @click="goBack" mode=""></image>
+	    <text>云上展馆</text>
+	</view>
     <!-- 热门博物馆标题 -->
     <view class="hot-title">热门博物馆</view>
 
@@ -28,8 +34,10 @@
         <view class="museum-content" :style="{ transform: `translateX(${item.offsetX}px)` }">
           <!-- 博物馆图片 -->
           <image class="museum-image" :src="item.image" mode="aspectFill" @click="goToDetail(item)"></image>
+          <!-- 添加博物馆名字 -->
+          <view class="museum-name-overlay">{{ item.name }}</view>
         </view>
-
+    
         <!-- 预约按钮（固定在右侧） -->
         <view class="reserve-btn" @click.stop="reserveMuseum(item)" :style="{ opacity: item.offsetX < 0 ? 1 : 0 }">
           点击预约
@@ -42,12 +50,9 @@
 </template>
 
 <script>
-import { getCreationList, deleteCreation } from '../../api/creation.js'
-import FloatBall from '@/compents/FloatBall.vue'
 import TabBar from '@/compents/TabBar.vue'
 export default {
   components: {
-    FloatBall,
     TabBar
   },
   data() {
@@ -57,9 +62,9 @@ export default {
       hotMuseums: [
         {
           id: 1,
-          name: '故宫博物馆',
+          name: '铜官窑博物馆',
           desc: '中国最大的古代文化艺术博物馆',
-          image: '/static/map/test.jpeg',
+          image: 'http://team-img.lizxx.com/team2/map/tt.jpeg',
 		  url:'https://www.720yun.com/vr/de925qOucbn',
           offsetX: 0
         },
@@ -67,7 +72,7 @@ export default {
           id: 2,
           name: '中国国家博物馆',
           desc: '展示中华五千年文明的重要窗口',
-          image: '/static/map/test3.jpeg',
+          image: 'http://team-img.lizxx.com/team2/map/test3.jpeg',
 		  url:'https://www.720yun.com/vr/de925qOucbn',
           offsetX: 0
         },
@@ -75,7 +80,7 @@ export default {
           id: 3,
           name: '上海博物馆',
           desc: '中国古代艺术的重要展示中心',
-          image: '/static/map/test2.jpeg',
+          image: 'http://team-img.lizxx.com/team2/map/test2.jpeg',
 		  url:'https://www.720yun.com/vr/de925qOucbn',
           offsetX: 0
         }
@@ -85,32 +90,30 @@ export default {
           id: 4,
           name: '湖南省博物馆',
           desc: '展示湖南历史文化的重要窗口',
-          image: '/static/map/test4.jpg',
+          image: 'http://team-img.lizxx.com/team2/map/test4.jpg',
           offsetX: 0
         },
         {
           id: 5,
           name: '陕西历史博物馆',
           desc: '展示陕西及中国古代文明的重要场所',
-          image: '/static/map/test2.jpeg',
+          image: 'http://team-img.lizxx.com/team2/map/test2.jpeg',
           offsetX: 0
         },
         {
           id: 6,
           name: '南京博物院',
           desc: '中国三大博物馆之一',
-          image: '/static/map/test.jpeg',
+          image: 'http://team-img.lizxx.com/team2/map/test.jpeg',
           offsetX: 0
         }
       ]
     }
   },
   methods: {
-    // goToDetail(item) {
-    //   uni.navigateTo({
-    //     url: `/pages/museumDetail/museumDetail?id=${item.id}`
-    //   });
-    // },
+    goBack() {
+      uni.navigateBack();
+    },
 goToMuseum(item) {
       // 直接跳转到静态URL（H5适用）
       if (process.env.VUE_APP_PLATFORM === 'h5') {
@@ -169,24 +172,53 @@ goToMuseum(item) {
 
 <style lang="scss">
 .museum-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #f5f5f5;
+    position: relative;
+    height: 100vh;
 
+	.bg-image {
+	    position: absolute;  /* 改为absolute */
+	    top: -18rpx;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    z-index: 0; /* 调整为0 */
+	  }
+   .header-bar{
+	   top: 70rpx;
+	   position: relative;
+	   margin-bottom: 20rpx;
+	   font-size: 43rpx;
+	   font-weight: bold;
+	   color: #000000; /* 改为白色文字 */
+	   z-index: 1;
+	   // margin: 20rpx;
+	   border-radius: 10rpx;
+	   
+	   image{
+		   width: 32rpx;
+		   height: 32rpx;
+		   margin-right: 220rpx;
+	   }
+   }
   /* 热门博物馆标题 */
-  .hot-title {
-    padding: 20rpx 30rpx;
-    font-size: 36rpx;
-    font-weight: bold;
-    color: #333;
-    background-color: #fff;
-  }
+   .hot-title {
+	   top: 14px;
+      position: relative;
+      font-size: 36rpx;
+      font-weight: bold;
+      color: #000000;
+      z-index: 1;
+      margin: 20rpx;
+      margin-top: 40rpx; // 增加上边距
+      margin-bottom: 20rpx; // 确保与轮播图有足够间距
+      border-radius: 10rpx;
+    }
 
   /* 轮播图样式 - 修复显示不全问题 */
   .hot-museum-swiper {
     height: 350rpx;
     width: 100%;
+	margin-top: 30rpx;
     box-sizing: border-box;
 
     .swiper-item {
@@ -227,10 +259,11 @@ goToMuseum(item) {
   /* 更多博物馆标题 */
   .section-title {
     padding: 30rpx;
+	position: relative;
     font-size: 36rpx;
     font-weight: bold;
-    color: #333;
-    background-color: #fff;
+    color: #000000;
+    // background-color: #000000;
     border-top: 1rpx solid #eee;
   }
 
@@ -253,6 +286,19 @@ goToMuseum(item) {
         /* 包含预约按钮的宽度 */
         height: 100%;
         transition: transform 0.3s;
+
+		  .museum-name-overlay {
+			position: absolute;
+			top: 20rpx;
+			left: 20rpx;
+			// background-color: rgba(0, 0, 0, 0.6);
+			color: #ffffff;
+			padding: 10rpx 20rpx;
+			border-radius: 8rpx;
+			font-size: 28rpx;
+			font-weight: bold;
+			z-index: 2;
+		  }
 
         .museum-image {
           width: calc(100% - 120rpx);

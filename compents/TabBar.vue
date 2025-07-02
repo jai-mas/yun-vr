@@ -56,22 +56,22 @@ export default {
         {
           name: 'home',
           text: '首页',
-          icon: '/static/icons/home-active.png',
-          activeIcon: '/static/icons/home-active.png',
+          icon: 'http://team-img.lizxx.com/team2/icons/home-active.png',
+          activeIcon: 'http://team-img.lizxx.com/team2/icons/home-active.png',
           url: '/pages/home/home'
         },
         {
           name: 'navigation',
           text: '导览',
-          icon: '/static/icons/navigation-active.png',
-          activeIcon: '/static/icons/navigation-active.png',
+          icon: 'http://team-img.lizxx.com/team2/icons/navigation-active.png',
+          activeIcon: 'http://team-img.lizxx.com/team2/icons/navigation-active.png',
           url: '/pages/Navigation/Navigation'
         },
         {
           name: 'my',
           text: '我的',
-          icon: '/static/icons/my.png',
-          activeIcon: '/static/icons/my.png',
+          icon: 'http://team-img.lizxx.com/team2/icons/my.png',
+          activeIcon: 'http://team-img.lizxx.com/team2/icons/my.png',
           url: '/pages/mine/mine'
         }
       ]
@@ -153,13 +153,13 @@ export default {
   left: 0;
   right: 0;
   height: 50px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5);
   display: flex;
   justify-content: space-around;
   align-items: center;
   box-shadow: none;
   z-index: 999;
-  opacity: 1;
+  // opacity: 1;
 
   /* 适配iPhone底部安全区 */
   padding-bottom: constant(safe-area-inset-bottom);
@@ -200,6 +200,6 @@ export default {
 }
 
 .active-text {
-  color: #ff0000;
+  color: #b2552f;
 }
 </style>

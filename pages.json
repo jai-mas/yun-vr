@@ -20,7 +20,8 @@
 			"path" : "pages/exhibition/exhibition",
 			"style" : 
 			{
-				"navigationBarTitleText" : ""
+				"navigationBarTitleText" : "",
+				"navigationStyle":"custom"
 			}
 		},
 		{
@@ -125,6 +126,7 @@
 					"path" : "pages/CheckIn/CheckIn",
 					"style" :{
 						"navigationBarTitleText" : "集章打卡"
+						// "navigationStyle":"custom"
 					}
 		},
 		{

@@ -1,7 +1,7 @@
 <template>
-<view class="publish-box" style="background-image: url('/static/mine/pub-back.jpg')">
+<view class="publish-box" style="background-image: url('http://team-img.lizxx.com/team2/mine/pub-back.jpg')">
 	<view class="publish-top">
-		<image class="publish-back" src="/static/mine/back.png"
+		<image class="publish-back" src="http://team-img.lizxx.com/team2/mine/back.png"
 			@click="toMine()"></image>
 		<view class="pub-title">用户发布</view>
 	</view>
@@ -19,7 +19,7 @@
 			</view>
 			
 		</view>
-		<image class="pub-add" src="/static/mine/add.png" @click="isAdd=true; addIcon=false; showTabBar=false" v-if="addIcon"></image>
+		<image class="pub-add" src="http://team-img.lizxx.com/team2/mine/add.png" @click="isAdd=true; addIcon=false; showTabBar=false" v-if="addIcon"></image>
 	</view>
 	<uni-popup ref="popup" type="bottom" :mask-click="false" v-if="isAdd">
 		<view class="add-container">
@@ -208,7 +208,7 @@ export default{
 }
 .publish-body{
 	width: 100vw;
-	height: 80vh;
+	height: 78.5vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

@@ -1,11 +1,11 @@
 <template>
 	<view class="message-container">
 		<!-- 背景图铺满整个界面 -->
-		<image class="full-bg" src="/static/leavemessage/背景.png" mode="aspectFill"></image>
+		<image class="full-bg" src="http://team-img.lizxx.com/team2/leavemessage/背景.png" mode="aspectFill"></image>
 		
 		<!-- 标题图片 -->
 		<view class="title-section" :style="{ paddingTop: statusBarHeight + 20 + 'px' }">
-			<image class="title-image" src="/static/leavemessage/image.png" mode="aspectFit"></image>
+			<image class="title-image" src="http://team-img.lizxx.com/team2/leavemessage/image.png" mode="aspectFit"></image>
 		</view>
 
 		<!-- 轮播图区域 -->
@@ -241,17 +241,17 @@
 					// 使用默认数据作为备用
 					this.bannerList = [
 						{
-							imageUrl: '/static/map/blueSky.png',
+							imageUrl: 'http://team-img.lizxx.com/team2/map/blueSky.png',
 							title: '美丽风景1',
 							description: '这里有最美丽的风景，欢迎大家来游览'
 						},
 						{
-							imageUrl: '/static/map/blueSky.png',
+							imageUrl: 'http://team-img.lizxx.com/team2/map/blueSky.png',
 							title: '美丽风景2',
 							description: '体验不一样的自然风光，感受大自然的魅力'
 						},
 						{
-							imageUrl: '/static/map/blueSky.png',
+							imageUrl: 'http://team-img.lizxx.com/team2/map/blueSky.png',
 							title: '美丽风景3',
 							description: '留下美好的回忆，分享快乐的时光'
 						}
@@ -334,11 +334,11 @@
 			// 获取便签背景图片
 			getNoteBgImage(index) {
 				const bgImages = [
-					'/static/leavemessage/image 49649.png',
-					'/static/leavemessage/image 49651.png',
-					'/static/leavemessage/image 49652.png',
-					'/static/leavemessage/image 49653.png',
-					'/static/leavemessage/image 49654.png'
+					'http://team-img.lizxx.com/team2/leavemessage/image 49649.png',
+					'http://team-img.lizxx.com/team2/leavemessage/image 49651.png',
+					'http://team-img.lizxx.com/team2/leavemessage/image 49652.png',
+					'http://team-img.lizxx.com/team2/leavemessage/image 49653.png',
+					'http://team-img.lizxx.com/team2/leavemessage/image 49654.png'
 				];
 				return bgImages[index % bgImages.length];
 			},

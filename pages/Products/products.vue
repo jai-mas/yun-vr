@@ -1,7 +1,7 @@
 <template>
   <view class="product-container">
     <!-- 背景图片 -->
-    <image src="/static/product/bg.png" class="background"></image>
+    <image src="http://team-img.lizxx.com/team2/product/bg.png" class="background"></image>
 
     <!-- 顶部标题 -->
     <view class="title">特色·物产</view>
@@ -38,7 +38,7 @@
 
     <!-- 操作提示 -->
     <view class="tip">
-      <image src="/static/product/arrow.png" class="arrow-fade"></image>
+      <image src="http://team-img.lizxx.com/team2/product/arrow.png" class="arrow-fade"></image>
     </view>
 
     <!-- 商品列表 -->
@@ -74,37 +74,37 @@ export default {
       products: [
         {
           name: '莓茶',
-          image: '/static/product/p1.png',
+          image: 'http://team-img.lizxx.com/team2/product/p1.png',
           desc: '土家族秘传宝物|让健康与美味同行',
           tags: ['营养价值高', '降"三高"', '民族特色', '品饮体验佳', '"红军茶"', '滋味醇厚回甘']
         },
         {
           name: '黑山羊',
-          image: '/static/product/p2.png',
+          image: 'http://team-img.lizxx.com/team2/product/p2.png',
           desc: '浏阳优质黑山羊|肉质鲜嫩，口感丰富',
           tags: ['肉质鲜嫩', '低脂肪', '浏阳特产', '湖南名品', '滋补佳品', '散养山羊']
         },
         {
           name: '腊肉',
-          image: '/static/product/p3.png',
+          image: 'http://team-img.lizxx.com/team2/product/p3.png',
           desc: '农家古法腌制|烟熏风味独特',
           tags: ['农家自制', '传统腌制', '松木烟熏', '肉质紧实', '风味独特', '下饭佳品']
         },
         {
           name: '花瑶瑶柱',
-          image: '/static/product/p4.png',
+          image: 'http://team-img.lizxx.com/team2/product/p4.png',
           desc: '瑶族山村手工干制|海味浓郁，原汁原味',
           tags: ['天然无添加', '海味干货', '瑶族非遗', '手工制品', '高蛋白', '口感丰富', '煲汤圣品']
         },
         {
           name: '毛尖',
-          image: '/static/product/p5.png',
+          image: 'http://team-img.lizxx.com/team2/product/p5.png',
           desc: '湖南名茶|回甘滋味，清香四溢',
           tags: ['明前嫩芽', '高山云雾', '抗氧化', '滋养身心', '传统炒青', '中国地理标志']
         },
         {
           name: '洞庭银鱼',
-          image: '/static/product/p6.png',
+          image: 'http://team-img.lizxx.com/team2/product/p6.png',
           desc: '洞庭湖水域特产|鲜美肉质，口感独特',
           tags: ['淡水珍品', '无骨银鱼', '岳阳特产', '高钙食品', '传统捕捞', '湖鲜之王']
         }

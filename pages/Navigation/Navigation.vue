@@ -1,7 +1,7 @@
 <template>
 	<view class="navigation-container">
 		<!-- 背景图 -->
-		<image class="bg-image" src="/static/navigation/bg.jpg" mode="aspectFill"></image>
+		<image class="bg-image" src="http://team-img.lizxx.com/team2/navigation/bg.jpg" mode="aspectFill"></image>
 
 		<!-- 页面标题 -->
 		<view class="page-title-container">
@@ -115,56 +115,56 @@ export default {
 			navItems: [
 				{
 					title: '游览古村镇',
-					icon: '/static/icons/village.png',
-					bg: '/static/navigation/nav-bg1.png',
+					icon: 'http://team-img.lizxx.com/team2/icons/village.png',
+					bg: 'http://team-img.lizxx.com/team2/navigation/nav-bg1.png',
 					url: ''
 				},
 				{
 					title: '探索发现',
-					icon: '/static/icons/discover.png',
-					bg: '/static/navigation/nav-bg2.png',
+					icon: 'http://team-img.lizxx.com/team2/icons/discover.png',
+					bg: 'http://team-img.lizxx.com/team2/navigation/nav-bg2.png',
 					url: '/pages/tansuo/faxian'
 				},
 				{
 					title: '云上展馆',
-					icon: '/static/icons/cloud-museum.png',
-					bg: '/static/navigation/nav-bg3.png',
+					icon: 'http://team-img.lizxx.com/team2/icons/cloud-museum.png',
+					bg: 'http://team-img.lizxx.com/team2/navigation/nav-bg3.png',
 					url: '/pages/exhibition/exhibition'
 				},
 				{
 					title: '文创艺术',
-					icon: '/static/icons/art.png',
-					bg: '/static/navigation/nav-bg4.png',
+					icon: 'http://team-img.lizxx.com/team2/icons/art.png',
+					bg: 'http://team-img.lizxx.com/team2/navigation/nav-bg4.png',
 					url: '/pages/MyCreation/MyCreation'
 				},
 				{
 					title: '特色物产',
-					icon: '/static/icons/product.png',
-					bg: '/static/navigation/nav-bg5.png',
+					icon: 'http://team-img.lizxx.com/team2/icons/product.png',
+					bg: 'http://team-img.lizxx.com/team2/navigation/nav-bg5.png',
 					url: '/pages/Products/products'
 				},
 				{
 					title: '地图',
-					icon: '/static/icons/map.png',
-					bg: '/static/navigation/nav-bg6.png',
+					icon: 'http://team-img.lizxx.com/team2/icons/map.png',
+					bg: 'http://team-img.lizxx.com/team2/navigation/nav-bg6.png',
 					url: '/pages/map/map'
 				},
 				{
 					title: '公益教育',
-					icon: '/static/icons/education.png',
-					bg: '/static/navigation/nav-bg7.png',
+					icon: 'http://team-img.lizxx.com/team2/icons/education.png',
+					bg: 'http://team-img.lizxx.com/team2/navigation/nav-bg7.png',
 					url: '/pages/welfare/welfare-main'
 				},
 				{
 					title: '集章打卡',
-					icon: '/static/icons/stamp.png',
-					bg: '/static/navigation/nav-bg8.png',
+					icon: 'http://team-img.lizxx.com/team2/icons/stamp.png',
+					bg: 'http://team-img.lizxx.com/team2/navigation/nav-bg8.png',
 					url: '/pages/CheckIn/CheckIn'
 				},
 				{
 					title: '线下预约',
-					icon: '/static/icons/appointment.png',
-					bg: '/static/navigation/nav-bg9.png',
+					icon: 'http://team-img.lizxx.com/team2/icons/appointment.png',
+					bg: 'http://team-img.lizxx.com/team2/navigation/nav-bg9.png',
 					url: ''
 				}
 			]
